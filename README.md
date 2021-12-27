@@ -1,24 +1,41 @@
-# README
+# MODEL CONNECTION
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+フリーで活動を行なっているモデルさんと、お仕事を紹介しているクライアントさんを繋げるサイトです。
 
-Things you may want to cover:
+### サイトテーマ
+モデル紹介、お仕事紹介
 
-* Ruby version
+### テーマを選んだ理由
+私は小さい頃に子役としてモデル活動をしていました。</br>
+大人になってもう一度フリーでモデル活動を始めたいと思いましたが、何から始めていいのかわからず諦めかけたことがありました。<br/>
+そこで私と同じように、モデル活動をやってみたいけど何から始めていいのかわからない人がいるのではないかと思い、</br>
+誰でもモデル活動が始めらる環境を作りたいと思い、このテーマにしました。
 
-* System dependencies
 
-* Configuration
+### ターゲットユーザ
+・モデル活動を行なっている人
+・お仕事を紹介するクライアント
 
-* Database creation
+### 主な利用シーン
+モデルとして活躍したい人や、モデルを始めてみたい人に利用していただけます。</br>
+また、クライアントさんもお仕事の依頼ができるので、撮影などに必要なモデルさんをスカウトすることも可能です。</br>
 
-* Database initialization
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+## 設計書
+<...>
 
-* Deployment instructions
+## チャレンジ要素一覧
+<https://docs.google.com/spreadsheets/d/11HZOSJh6dwWEnM5Jv7raVP6W0bnbwtR-RI3_I34E4Aw/edit#gid=0>
 
-* ...
+## 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- IDE：Cloud9
+
+## 使用素材
+- 外部サービスの画像素材・音声素材を使用した場合は、必ずサービス名とURLを明記してください。
+- 使用しない場合は、使用素材の項目をREADMEから削除してください。
