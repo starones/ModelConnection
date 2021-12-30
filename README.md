@@ -23,9 +23,9 @@
 
 
 ## 設計書
-・[ER図] (https://app.diagrams.net/#G17rA3cDQ2-nPOJT2bmduASL6Xvz0cN7kf)
-・[テーブル設計書] (https://docs.google.com/spreadsheets/d/1eIAv86Zl3EE3gDSDDKOWJh7rM8y-nl936mhDkblcoPY/edit#gid=1373217982)
-・[アプリケーション設計詳細書]　(
+・[ER図](https://app.diagrams.net/#G17rA3cDQ2-nPOJT2bmduASL6Xvz0cN7kf)</br>
+・[テーブル設計書](https://docs.google.com/spreadsheets/d/1eIAv86Zl3EE3gDSDDKOWJh7rM8y-nl936mhDkblcoPY/edit#gid=1373217982)</br>
+・[アプリケーション設計詳細書](https://docs.google.com/spreadsheets/d/1XmJRjVqWTFh50IEWCwqMplm0Rdp2g3dc6IEj8kMO1TU/edit#gid=0)
 
 ## チャレンジ要素一覧
 <https://docs.google.com/spreadsheets/d/11HZOSJh6dwWEnM5Jv7raVP6W0bnbwtR-RI3_I34E4Aw/edit#gid=0>
