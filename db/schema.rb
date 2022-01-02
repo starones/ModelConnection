@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_02_053702) do
+ActiveRecord::Schema.define(version: 2022_01_02_122800) do
 
   create_table "actors", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -54,6 +54,26 @@ ActiveRecord::Schema.define(version: 2022_01_02_053702) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_clients_on_email", unique: true
     t.index ["reset_password_token"], name: "index_clients_on_reset_password_token", unique: true
+  end
+
+  create_table "favorites", force: :cascade do |t|
+    t.integer "actor_id"
+    t.integer "client_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "job_requests", force: :cascade do |t|
+    t.integer "client_id"
+    t.string "title"
+    t.text "job_content"
+    t.string "recruitment_gender"
+    t.string "recruitment_stature"
+    t.string "recruitmebt_other"
+    t.integer "money"
+    t.string "contact"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
