@@ -1,0 +1,2 @@
+module Actor::JobRequestsHelper
+end

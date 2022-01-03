@@ -1,0 +1,2 @@
+module Actor::SearchsHelper
+end

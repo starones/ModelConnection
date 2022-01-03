@@ -1,0 +1,2 @@
+module Client::JobRequestsHelper
+end
