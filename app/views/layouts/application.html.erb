@@ -10,6 +10,46 @@
   </head>
 
   <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">MODEL CONNCTION</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="navbar-collapse collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <% if actor_signed_in? %>
+              <li class="nav-item active">ようこそ、<%= current_actor.name %>様!</li>
+              <li class="nav-item"><%= link_to "モデル一覧" %></div></li>
+              <li class="nav-item"><%= link_to "マイページ" %></li>
+              <li class="nav-item"><%= link_to "お仕事一覧" %></li>
+              <li class="nav-item"><%= link_to "クライアント一覧" %></li>
+              <li class="nav-item"><%= link_to "お問合せ" %></li>
+              <li class="nav-item"><%= link_to "ログアウト" %></li>
+            <% elsif client_signed_in?  %>
+              <li class="nav-item active">ようこそ、<%= current_cliient.name %>様!</li>
+              <li class="nav-item"><%= link_to "モデル一覧" %></li>
+              <li class="nav-item"><%= link_to "マイページ" %></li>
+              <li class="nav-item"><%= link_to "お問合せ" %></li>
+              <li class="nav-item"><%= link_to "登録お仕事一覧" %></li>
+              <li class="nav-item"><%= link_to "ログアウト" %></li>
+            <% else %>
+              <li class="nav-item mb-3 mt-3"><%= link_to "モデル一覧" %></li>
+              <li class="nav-item mb-3"><%= link_to "ABOUT" %></li>
+              <li class="nav-item mb-3"><%= link_to "お問合せ" %></li>
+              <li class="nav-item mb-3"><%= link_to "ログイン" %></li>
+              <li class="nav-item"><%= link_to "新規登録" %></li>
+            <% end %>
+          </ul>
+        </div>
+      </nav>
+    </header>
     <%= yield %>
+    <footer class="py-3">
+      <div class="container text-center text-black">
+        <p>© MODEL CONNCTION</p>
+      </div>
+    </footer>
   </body>
 </html>
