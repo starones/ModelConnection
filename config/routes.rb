@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     resources :clients, only:[:show, :edit, :update]
     resources :job_requests
     resource :favorites, only:[:create, :destroy]
-    get 'search' => 'search#search'
+    get 'search' => 'searchs#search'
   end
 
   # ____モデル側____
@@ -28,10 +28,10 @@ Rails.application.routes.draw do
     resources :actors, only:[:index, :show, :edit, :update]
     resources :job_requests, only:[:index, :show]
     resources :clients, only:[:index, :show]
-    get 'search' => 'search#search'
-    get 'inquiry' => 'inquiry#index'
-    post 'inquiry' => 'inquiry#confirm'
-    post 'inquiry' => 'inquiry#thanks'
+    get 'search' => 'searchs#search'
+    get 'inquiry' => 'inquiries#index'
+    post 'inquiry' => 'inquiries#confirm'
+    post 'inquiry' => 'inquiries#thanks'
   end
 
 end
