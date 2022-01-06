@@ -1,26 +1,48 @@
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<div class="container mt-5 mb-5">
+  <div class="row text-center">
+	  <div class="col-md-6 offset-md-3">
+	    <div class="card">
+	      <div class="card-body">
+    	    <div class="login-img mb-3 mt-3">
+    	      <%= image_tag "steam_blue_dark_coffee_food_brown_foam_sugar_drinks_TagNotAllowedTooSubjective_plates_beans_2560x1600", size:"250x200" %>
+    	    </div>
+  	        <div class="login-title mb-3">
+  	          <h3>クライアントログイン</h3>
+  	        </div>
+	            <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+	          <div class="login-form mt-4">
+	            <form>
+                <div class="form-row">
+                  <div class="form-group col-md-12">
+                     <%= f.label :email %><br />
+                     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+                  </div>
+                  <div class="form-group col-md-12">
+                     <%= f.label "パスワード" %><br />
+                     <%= f.password_field :password, autocomplete: "current-password" %>
+                  </div>
+                </div>
+                  <% if devise_mapping.rememberable? %>
+                  <div class="form-row">
+                    <div class="form-group col-md-10">
+                      <div class="form-check">
+                        <%= f.check_box :remember_me %>
+                        <%= f.label :remember_me %>
+                      </div>
+                    </div>
+                  </div>
+                  <% end %>
+                  <div class="form-group col-md-12">
+                    <%= f.submit "ログイン", class: "btn btn-secondary btn-lg" %>
+                  </div>
+              <% end %>
+              </form>
+	          </div>
+	           <div class="logi-forgot text-right mt-2">
+	             登録がお済みでない方は<%= render "client/shared/links" %>
+	           </div>
+	       </div>
+	     </div>
+	  </div>
   </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
-
-<%= render "client/shared/links" %>
+</div>

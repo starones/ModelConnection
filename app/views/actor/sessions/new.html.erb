@@ -6,8 +6,8 @@
 	        <div class="login-img mb-3">
 	           <%= image_tag "pexels-pixabay-459403.jpg", size:"250x200" %>
 	        </div>
-	          <div class="login-title">
-	            <h4>モデルログイン</h4>
+	          <div class="login-title mt-4">
+	            <h3>モデルログイン</h3>
 	          </div>
 	            <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 	          <div class="login-form mt-4">
@@ -18,13 +18,13 @@
                     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
                   </div>
                   <div class="form-group col-md-12">
-                    <%= f.label :password %><br />
+                    <%= f.label "パスワード" %><br />
                     <%= f.password_field :password, autocomplete: "current-password" %>
                   </div>
                 </div>
                   <% if devise_mapping.rememberable? %>
                   <div class="form-row">
-                    <div class="form-group">
+                    <div class="form-group col-md-10">
                       <div class="form-check">
                         <%= f.check_box :remember_me %>
                         <%= f.label :remember_me %>
@@ -32,8 +32,8 @@
                     </div>
                   </div>
                   <% end %>
-                  <div class="form-row">
-                    <%= f.submit "Log in" %>
+                  <div class="form-group col-md-12">
+                    <%= f.submit "ログイン", class: "btn btn-secondary btn-lg" %>
                   </div>
               <% end %>
               </form>
