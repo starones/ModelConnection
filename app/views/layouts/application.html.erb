@@ -20,20 +20,20 @@
         <div class="navbar-collapse collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <% if actor_signed_in? %>
-              <li class="nav-item active">ようこそ、<%= current_actor.name %>様!</li>
-              <li class="nav-item"><%= link_to "モデル一覧" %></div></li>
-              <li class="nav-item"><%= link_to "マイページ" %></li>
-              <li class="nav-item"><%= link_to "お仕事一覧" %></li>
-              <li class="nav-item"><%= link_to "クライアント一覧" %></li>
-              <li class="nav-item"><%= link_to "お問合せ" %></li>
-              <li class="nav-item"><%= link_to "ログアウト" %></li>
+              <li class="nav-item mb-3 mt-3">ようこそ、<%= current_actor.name %>様!</li>
+              <li class="nav-item mb-3"><%= link_to "モデル一覧" %></li>
+              <li class="nav-item mb-3"><%= link_to "マイページ" %></li>
+              <li class="nav-item mb-3"><%= link_to "お仕事一覧" %></li>
+              <li class="nav-item mb-3"><%= link_to "クライアント一覧" %></li>
+              <li class="nav-item mb-3"><%= link_to "お問合せ" %></li>
+              <li class="nav-item"><%= link_to "ログアウト", destroy_actor_session_path, method: :delete %></li>
             <% elsif client_signed_in?  %>
-              <li class="nav-item active">ようこそ、<%= current_cliient.name %>様!</li>
-              <li class="nav-item"><%= link_to "モデル一覧" %></li>
-              <li class="nav-item"><%= link_to "マイページ" %></li>
-              <li class="nav-item"><%= link_to "お問合せ" %></li>
-              <li class="nav-item"><%= link_to "登録お仕事一覧" %></li>
-              <li class="nav-item"><%= link_to "ログアウト" %></li>
+              <li class="nav-item mb-3">ようこそ、<%= current_cliient.name %>様!</li>
+              <li class="nav-item mb-3"><%= link_to "モデル一覧" %></li>
+              <li class="nav-item mb-3"><%= link_to "マイページ" %></li>
+              <li class="nav-item mb-3"><%= link_to "お問合せ" %></li>
+              <li class="nav-item mb-3"><%= link_to "登録お仕事一覧" %></li>
+              <li class="nav-item"><%= link_to "ログアウト", destroy_client_session_path, metod: :delete %></li>
             <% else %>
               <li class="nav-item mb-3 mt-3"><%= link_to "モデル一覧" %></li>
               <li class="nav-item mb-3"><%= link_to "ABOUT" %></li>
