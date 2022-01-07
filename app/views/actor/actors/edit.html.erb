@@ -1,1 +1,74 @@
-<h1>モデル編集画面</h1>
+<div class="container">
+    <div class="row d-flex align-items-center justify-content-center">
+        <div class="border col-7 my-5">
+            <h2 class="my-3 ">モデル編集</h2>
+            <%= form_with model: @actor, local:true do |f| %>
+            <div class="row">
+                <div class="col-md">
+                    <form>
+                        <div class="form-group">
+                            <label>名前（モデル名）:</label><br/>
+                            <%= f.text_field :name %>
+                        </div>
+                        <div class="form-group">
+                            <label>MY写真:</label><br/>
+                            <%= f.attachment_field :image %>
+                        </div>
+                        <div class="form-group">
+                            <label>生年月日:</label><br/>
+                            <%= f.text_field :born_year, size: "7x7" %> 年 <%= f.text_field :born_month, size: "7x7" %> 月 <%= f.text_field :born_day, size: "7x7" %> 日
+                        </div>
+                        <div class="form-group">
+                            <label>年齢:</label><br/>
+                            <%= f.text_field :age, size: "6x6" %> 歳
+                        </div>
+                        <div class="form-group">
+                            <label>性別:</label><br/>
+                            <%= f.radio_button :gender, true %>
+                            <%= f.label :gender, "女性" %>：
+                            <%= f.radio_button :gender, false %>
+                            <%= f.label :gender, "男性" %>
+                        </div>
+                        <div class="form-group">
+                            <label>身長:</label><br/>
+                            <%= f.text_field :stature, size: "7x7" %> cm
+                        </div>
+                        <div class="form-group">
+                            <label>自己PR:</label><br/>
+                            <%= f.text_area :body, class: "form-control" %>
+                        </div>
+                        <div class="form-group">
+                            <label>出演経歴:</label><br/>
+                            <%= f.text_area :career, class: "form-control" %>
+                        </div>
+                         <div class="form-group">
+                            <label>連絡先:</label><br/>
+                            <%= f.text_field :contact %>
+                        </div>
+                        <div class="form-group">
+                            <label>Instagramアカウント名:</label><br/>
+                            <%= f.text_field :instagram_rink %>
+                        </div>
+                        <div class="form-group">
+                            <label>Twitterアカウント名:</label><br/>
+                            <%= f.text_field :twitter_rink %>
+                        </div>
+                        <div class="form-group">
+                            <label>TikTokアカウント名:</label><br/>
+                            <%= f.text_field :tiktok_rink %>
+                        </div>
+                        <div class="form-group">
+                            <label>その他リンク先:</label><br/>
+                            <%= f.text_field :others_rink %>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="text-center">
+                <%= f.submit "保存", class: "btn btn-secondary" %>
+            </div>
+            <% end %>
+            <br>
+        </div>
+    </div>
+</div>

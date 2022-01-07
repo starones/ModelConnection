@@ -5,5 +5,5 @@ class Actor < ApplicationRecord
          :recoverable, :rememberable, :validatable
          
    has_many :favorites
-   
+   attachment :image
 end

@@ -1,1 +1,17 @@
 <h1>モデル一覧画面</h1>
+  <div class="container">
+    <div class="row">
+      <% @actors.each do |actor| %>
+        <div class="col-lg-3 col-md-6">
+          <div class="card mx-auto mb-4 bg-dark text-white">
+            <%= link_to actor_path(actor) do %>
+              <%= attachment_image_tag actor, :image, class:"card-img-top", fallback: "no-image.jpeg" %>
+            <% end %>
+              <p class="card-text text-center"><%= actor.name %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+

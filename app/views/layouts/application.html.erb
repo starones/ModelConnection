@@ -22,7 +22,7 @@
             <% if actor_signed_in? %>
               <li class="nav-item mb-3 mt-3">ようこそ、<%= current_actor.name %>様!</li>
               <li class="nav-item mb-3"><%= link_to "モデル一覧" %></li>
-              <li class="nav-item mb-3"><%= link_to "マイページ" %></li>
+              <li class="nav-item mb-3"><%= link_to "マイページ", actor_path(current_actor.id) %></li>
               <li class="nav-item mb-3"><%= link_to "お仕事一覧" %></li>
               <li class="nav-item mb-3"><%= link_to "クライアント一覧" %></li>
               <li class="nav-item mb-3"><%= link_to "お問合せ" %></li>
