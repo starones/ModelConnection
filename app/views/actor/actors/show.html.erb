@@ -1,1 +1,51 @@
-<h1>モデル詳細画面</h1>
+<div class="container px-5 px-sm-0 mt-5 mb-4">
+    <div class="row">
+        <div class="col-md-5">
+            <%= attachment_image_tag @actor, :image, size: "400x400", class:"card-img-top", fallback: "no-image.jpeg" %>
+            <a href="https://www.instagram.com/<%= @actor.instagram_rink %>">Instagram</a>
+            <a href="https://twitter.com/<%= @actor.twitter_rink %>">twitter</a>
+            <a href="https://www.tiktok.com/<%= @actor.tiktok_rink %>">TikTok</a>
+            <a href="<%= @actor.others_rink %>">その他リンク</a>
+          <div class="row d-flex align-items-center justify-content-center">
+            <% if @actor.id == current_actor.id %>
+              <%= link_to "編集", edit_actor_path(@actor), class: "btn btn-secondary" %>
+            <% end %>
+          </div>
+        </div>
+        <div class="col-md-7">
+            <h1><%= @actor.name %></h1>
+                <table class='table'>
+                  <tr>
+                    <th class="col-3">生年月日：</th>
+            	    <th><%= @actor.born_year %> 年 <%= @actor.born_month%> 月 <%= @actor.born_day %> 日</th>
+                  </tr>
+                  <tr>
+                    <th>年齢：</th>
+                    <th><%= @actor.age %> 歳</th>
+                  </tr>
+                  <tr>
+                    <th>性別：</th>
+                    <% if @actor.gender == true %>
+                        <th>女性</th>
+                    <% else %>
+                        <th>男性</th>
+                    <% end %>
+                  </tr>
+                  <tr>
+                    <th>身長：</th>
+                    <th><%= @actor.stature %> cm</th>
+                  </tr>
+                  <tr>
+                    <th>自己PR：</th>
+                    <th><%= @actor.body %></th>
+                  </tr>
+                  <th>出演経歴：</th>
+                    <th><%= @actor.career %></th>
+                  <tr>
+                    <th>連絡先：</th>
+                    <th><%= @actor.contact %></th>
+                  </tr>
+            </table>
+        </div>
+    </div>
+</div>
