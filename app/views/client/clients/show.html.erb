@@ -1,24 +1,13 @@
 <div class="container px-5 px-sm-0 mt-5 mb-4">
     <div class="row">
         <div class="col-md-5">
-            <%= attachment_image_tag @client, :image, size: "400x400", class:"card-img-top", fallback: "no-image.jpeg" %>
-          <div class="row d-flex align-items-center justify-content-center mt-5">
-            <% if client_signed_in? %>
-              <% if @client.id == current_client.id %>
-                <div class="mr-5">
-
-                <%= link_to "お仕事登録", new_client_job_request_path, class: "btn btn-secondary" %>
-                </div>
-                <%= link_to "マイページ編集", edit_client_client_path(@client), class: "btn btn-secondary" %>
-              <% end %>
-            <% end %>
-          </div>
+          <%= attachment_image_tag @client, :image, size: "400x400", class:"card-img-top", fallback: "no-image.jpeg" %>
         </div>
-        <div class="col-md-7">
+        <div class="col-md-6 mt-5">
             <h1><%= @client.name %></h1>
                 <table class='table'>
                   <tr>
-                    <th>自己PR：</th>
+                    <th class="col-3">自己紹介：</th>
                     <th><%= @client.body %></th>
                   </tr>
                   <tr>
@@ -27,5 +16,15 @@
                   </tr>
             </table>
         </div>
+    </div>
+    <div class="row d-flex align-items-center justify-content-center mt-5">
+      <% if client_signed_in? %>
+          <% if @client.id == current_client.id %>
+            <div class="mr-5">
+              <%= link_to "お仕事登録", new_client_job_request_path, class: "btn btn-secondary" %>
+            </div>
+          <%= link_to "マイページ編集", edit_client_client_path(@client), class: "btn btn-secondary" %>
+        <% end %>
+      <% end %>
     </div>
 </div>

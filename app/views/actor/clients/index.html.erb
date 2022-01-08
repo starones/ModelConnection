@@ -1,1 +1,15 @@
-<h1>クライアント一覧（モデル側）</h1>
+<h1>クライアント一覧画面</h1>
+  <div class="container">
+    <div class="row">
+      <% @clients.each do |client| %>
+        <div class="col-lg-3 col-md-6">
+          <div class="card mx-auto mb-4 bg-dark text-white">
+            <%= link_to client_client_path(client) do %>
+              <%= attachment_image_tag client, :image, size: "210x210", class:"card-img-top", fallback: "no-image.jpeg" %>
+            <% end %>
+              <p class="card-text text-center"><%= client.name %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>

@@ -4,6 +4,7 @@
     <title>Modelconnection</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <script src="https://kit.fontawesome.com/759355d5ee.js" crossorigin="anonymous"></script>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -24,7 +25,7 @@
               <li class="nav-item mb-3"><%= link_to "モデル一覧", actors_path %></li>
               <li class="nav-item mb-3"><%= link_to "マイページ", actor_path(current_actor.id) %></li>
               <li class="nav-item mb-3"><%= link_to "お仕事一覧" %></li>
-              <li class="nav-item mb-3"><%= link_to "クライアント一覧" %></li>
+              <li class="nav-item mb-3"><%= link_to "クライアント一覧", clients_path %></li>
               <li class="nav-item mb-3"><%= link_to "お問合せ" %></li>
               <li class="nav-item"><%= link_to "ログアウト", destroy_actor_session_path, method: :delete %></li>
             <% elsif client_signed_in?  %>
