@@ -1,1 +1,44 @@
 <h1>お仕事詳細画面</h1>
+  <div class="container my-5">
+    <div class="row">
+      <div class="col-11">
+        <h1 class="mb-3"><%= @job_request.title %></h1>
+         <table class='table'>
+            <tr>
+              <th class="col-3">仕事内容：</th>
+              <th><%= @job_request.job_content %></th>
+            </tr>
+            <tr>
+              <th>性別：</th>
+              <th><%= @job_request.recruitment_gender %></th>
+            </tr>
+            <tr>
+              <th>身長：</th>
+              <th><%= @job_request.recruitment_stature %></th>
+            </tr>
+            <tr>
+              <th>その他募集内容：</th>
+              <th><%= @job_request.recruitmebt_other %></th>
+            </tr>
+            <tr>
+              <th>報酬金：</th>
+              <th><%= @job_request.money %>円</th>
+            </tr>
+            <tr>
+              <th>依頼元url：</th>
+              <th><a href="<%= @job_request.contact %>"><%= @job_request.contact %></a></th>
+            </tr>
+         </table>
+         <div class="row d-flex align-items-center justify-content-center mt-3">
+            <% if client_signed_in? %>
+              <% if @job_request.client_id == current_client.id %>
+              <div class="mr-4">
+                <%= link_to "編集", edit_client_job_request_path(@job_request), class: "btn btn-secondary btn-lgs" %>
+              </div>
+                <%= link_to "削除", client_job_request_path(@job_request), method: :delete, class: "btn btn-secondary btn-lgs" %>
+              <% end %>
+            <% end %>
+         </div>
+      </div>
+    </div>
+  </div>

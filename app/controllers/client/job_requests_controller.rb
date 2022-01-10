@@ -1,10 +1,11 @@
 class Client::JobRequestsController < ApplicationController
 
   def index
-
+    @job_requests = JobRequest.all
   end
 
   def show
+    @job_request = JobRequest.find(params[:id])
   end
 
   def edit

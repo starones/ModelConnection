@@ -1,1 +1,25 @@
-<h1>登録お仕事登録一覧画面</h1>
+<div class="container">
+  <div class="row text-center">
+    <h1>登録お仕事一覧</h1>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">タイトル</th>
+            <th scope="col ml-2">登録日</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @job_requests.each do |job_request| %>
+            <tr>
+              <th scope="row"><%= job_request.id %></th>
+              <td><%= job_request.title %></td>
+              <td><%= job_request.created_at.strftime("%Y/%m/%d") %></td>
+              <td><%= link_to "詳細", client_job_request_path(job_request), class: "btn btn-secondary" %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+</div>
