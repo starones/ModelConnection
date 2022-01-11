@@ -21,18 +21,21 @@
 
 
 // -----top画面のスライドショー機能-----
-$(document).ready(function () {
-  $("#theTarget").skippr({
-    transition : 'fade',
-    speed : 1500,
-    easing : 'easeOutQuart',
-    navType : 'bubble',
-    childrenElementType : 'div',
-    arrows : false,
-    autoPlay : true,
-    autoPlayDuration : 3500,
-    keyboardOnAlways : true,
-    hidePrevious : false
+ document.addEventListener("turbolinks:load"
+, function () {
+  $(document).ready(function () {
+    $("#theTarget").skippr({
+      transition : 'fade',
+      speed : 1500,
+      easing : 'easeOutQuart',
+      navType : 'bubble',
+      childrenElementType : 'div',
+      arrows : false,
+      autoPlay : true,
+      autoPlayDuration : 3500,
+      keyboardOnAlways : true,
+      hidePrevious : false
+    });
   });
 });
 // ------ここまで--------
