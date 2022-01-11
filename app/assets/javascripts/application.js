@@ -19,6 +19,8 @@
 //= require turbolinks
 //= require_tree .
 
+
+// -----top画面のスライドショー機能-----
 $(document).ready(function () {
   $("#theTarget").skippr({
     transition : 'fade',
@@ -33,3 +35,4 @@ $(document).ready(function () {
     hidePrevious : false
   });
 });
+// ------ここまで--------
