@@ -1,4 +1,5 @@
 class Actor::HomesController < ApplicationController
+  
   def top
   end
 
