@@ -1,7 +1,8 @@
 class Actor::ActorsController < ApplicationController
 
   def index
-    @actors = Actor.all
+    @q = Actor.ransack(params[:q])
+    @actors = @q.result(distinct: true)
   end
 
   def show
