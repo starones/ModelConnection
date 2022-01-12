@@ -3,6 +3,6 @@ class InquiryMailer < ApplicationMailer
 
   def received_email(inquiry)
     @inquiry = inquiry
-    mail(:to => inquiry.email, :subject => 'MODEL CONNECTIONからのお問い合わせ')
+    mail(:to => ENV['SEND_MAIL'], :subject => 'MODEL CONNECTIONからのお問い合わせ')
   end
 end
