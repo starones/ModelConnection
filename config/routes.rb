@@ -30,8 +30,8 @@ Rails.application.routes.draw do
     resources :clients, only:[:index, :show]
     get 'search' => 'searchs#search'
     get 'inquiry' => 'inquiries#index'
-    post 'inquiry' => 'inquiries#confirm'
-    post 'inquiry' => 'inquiries#thanks'
+    post 'inquiry/confirm' => 'inquiries#confirm'
+    post 'inquiry/thanks' => 'inquiries#thanks'
   end
 
 end
