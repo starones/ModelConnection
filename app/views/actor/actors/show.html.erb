@@ -15,22 +15,10 @@
         </div>
 
         <div class="col-md-7">
-
             <h1 class="row justify-content-between"><%= @actor.name %>
-
-              <% if client_signed_in? %>
-              <% if @actor.favorited_by?(current_client) %>
-                  <%= link_to  actor_favorites_path(@actor), method: :delete do %>
-                    <i class="fas fa-star text-center"><h6>はずす</h6></i>
-                  <% end %>
-                <% else %>
-                  <%= link_to  actor_favorites_path(@actor), method: :post do %>
-                  <i class="far fa-star text-center"><h6>お気に入り</h6></i>
-                  <% end %>
-              <% end %>
-              <% end %>
-
-
+            <div id="favorite-btn_<%= @actor.id %>">
+             <%= render 'actor/favorites/favorites', actor: @actor %>
+            </div>
             </h1>
 
                 <table class='table'>

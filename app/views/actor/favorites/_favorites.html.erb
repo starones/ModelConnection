@@ -1,0 +1,11 @@
+ <% if client_signed_in? %>
+    <% if actor.favorited_by?(current_client) %>
+      <%= link_to  actor_favorites_path(actor), method: :delete, remote: true do %>
+        <i class="fas fa-star text-center"><h6>はずす</h6></i>
+      <% end %>
+    <% else %>
+      <%= link_to  actor_favorites_path(actor), method: :post, remote: true do %>
+        <i class="far fa-star text-center"><h6>お気に入り</h6></i>
+      <% end %>
+    <% end %>
+<% end %>
