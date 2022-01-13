@@ -17,7 +17,6 @@ Rails.application.routes.draw do
   namespace :client do
     resources :clients, only:[:show, :edit, :update]
     resources :job_requests
-    resource :favorites, only:[:create, :destroy]
     get 'search' => 'searchs#search'
   end
 
@@ -25,7 +24,9 @@ Rails.application.routes.draw do
   scope module: :actor do
     root to: 'homes#top'
     get 'about' => 'homes#about'
-    resources :actors, only:[:index, :show, :edit, :update]
+    resources :actors, only:[:index, :show, :edit, :update] do
+    resource :favorites, only:[:create, :destroy]
+    end
     resources :job_requests, only:[:index, :show]
     resources :clients, only:[:index, :show]
     get 'search' => 'searchs#search'

@@ -16,6 +16,22 @@
 
         <div class="col-md-7">
             <h1><%= @actor.name %></h1>
+              <% if client_signed_in? %>
+              <% if @actor.favorited_by?(current_client) %>
+                <p>
+                  <%= link_to  actor_favorites_path(@actor), method: :delete do %>
+                    ★
+                  <% end %>
+                </p>
+                <% else %>
+                <p>
+                  <%= link_to  actor_favorites_path(@actor), method: :post do %>
+                  ☆
+                  <% end %>
+                </p>
+              <% end %>
+              <% end %>
+
                 <table class='table'>
                   <tr>
                     <th class="col-3">生年月日：</th>
