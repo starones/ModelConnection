@@ -5,7 +5,7 @@ class Client < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :favorites
-  has_many :actors
+  has_many :actors, through: :favorites
 
   has_many :job_requests
   attachment :image

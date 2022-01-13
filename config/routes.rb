@@ -15,7 +15,9 @@ Rails.application.routes.draw do
 
   # ____クライアント側____
   namespace :client do
-    resources :clients, only:[:show, :edit, :update]
+    resources :clients, only:[:show, :edit, :update, :favorite] do
+      get :favorites, on: :collection
+    end
     resources :job_requests
     get 'search' => 'searchs#search'
   end
