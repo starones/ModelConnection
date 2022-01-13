@@ -19,6 +19,26 @@
       background-color: #888888;
  }
 
+  .btn {
+   position: relative;
+   border: none;
+   transition: .4s ease-in;
+   z-index: 1;
+ }
+
+ .btn::before,
+ .btn::after{
+   position: absolute;
+   content: "";
+   z-index: -1;
+ }
+
+ .btn:hover {
+   box-shadow: 10px 10px 0px #4b0082;
+   top: -5px;
+   left: -5px;
+ }
+
 // ---------JavaScriptスライドショー機能--------
  .top_image1 {
   background-image: url(top_image1.jpg);
