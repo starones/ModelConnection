@@ -4,6 +4,7 @@
       <table class="table">
         <thead>
           <tr>
+            <th></th>
             <th scope="col">タイトル</th>
             <th scope="col ml-2">登録日</th>
             <th scope="col"></th>
@@ -11,8 +12,9 @@
           </tr>
         </thead>
         <tbody>
-          <% @job_requests.each do |job_request| %>
+          <% @job_requests.each.with_index(1) do |job_request, i| %>
             <tr>
+              <td><%= i %></td>
               <td><%= job_request.title %></td>
               <td><%= job_request.created_at.strftime("%Y/%m/%d") %></td>
               <td class="text-right"><%= link_to "詳細", client_job_request_path(job_request), class: "btn btn-secondary" %></td>

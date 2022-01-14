@@ -1,6 +1,6 @@
 <h1>モデル一覧</h1>
 
-<div class="d-flex align-items-center justify-content-center mt-3 mb-5">
+<div class="d-flex align-items-center justify-content-center mt-3 mb-3">
   <span class="border border-secondary py-3 px-5">
     <%= search_form_for @q do |f| %>
       <%= f.search_field :name_cont, placeholder:"モデル名", class:"mr-4" %>
@@ -20,6 +20,15 @@
     <% end %>
   </span>
 </div>
+
+<div class="container mb-4">
+<div class="row d-flex align-items-center justify-content-center">
+  <%= sort_link(@q, :name, "名前") %>&nbsp;/&nbsp;
+  <%= sort_link(@q, :age, "年齢") %>&nbsp;/&nbsp;
+  <%= sort_link(@q, :created_at, "登録日") %>
+</div>
+</div>
+
 
   <div class="container">
     <div class="row">

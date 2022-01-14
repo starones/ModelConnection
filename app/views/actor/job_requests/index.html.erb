@@ -8,7 +8,6 @@
               <%= attachment_image_tag job_request.client, :image, size: "210x210", class:"card-img-top", fallback: "no-image.jpeg" %>
           <div class="card-body">
             <h5 class="card-title text-dark"><%= job_request.title %></h5>
-              <p class="card-text text-dark"><%= job_request.job_content %></p>
                 <p class="card-text"><small class="text-muted">登録日：<%= job_request.created_at.strftime("%Y/%m/%d") %></small></p>
             <% end %>
           </div>
