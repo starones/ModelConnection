@@ -15,8 +15,12 @@
  */
  @import "bootstrap";
 
+ header {
+   background-color: #222222;
+ }
+
  footer {
-      background-color: #888888;
+      background-color: #222222;
  }
 
 // -------ボタン装飾--------
@@ -71,4 +75,9 @@
 .thanks {
   margin-top: 200px;
   margin-bottom: 200px;
+}
+
+.fit-picture {
+  width: 100%;
+
 }
