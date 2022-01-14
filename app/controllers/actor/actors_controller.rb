@@ -1,5 +1,8 @@
 class Actor::ActorsController < ApplicationController
 
+  #更新しても閲覧数がカウントしないように設定したため下記２つ「, unique: [:ip_address]」を消すと閲覧数は上がる
+  impressionist :actions => [:show], unique: [:ip_address]
+
   def index
     @q = Actor.ransack(params[:q])
     @actors = @q.result(distinct: true)
@@ -7,6 +10,8 @@ class Actor::ActorsController < ApplicationController
 
   def show
     @actor = Actor.find(params[:id])
+    # ----トラッキング機能（1つのIPアドレスで1PVあがる）----
+    impressionist(@actor, nil, unique: [:ip_address])
   end
 
   def edit

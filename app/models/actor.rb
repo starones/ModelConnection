@@ -12,4 +12,6 @@ class Actor < ApplicationRecord
      favorites.where(client_id: client.id).exists?
    end
 
+  # -----トラッキング機能（PV数）------
+  is_impressionable counter_cache: true
 end

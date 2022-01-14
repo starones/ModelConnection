@@ -6,7 +6,7 @@
          <table class='table'>
             <tr>
               <th class="col-3">仕事内容：</th>
-              <th><%= @job_request.job_content %></th>
+              <th><%= simple_format(h(@job_request.job_content)) %></th>
             </tr>
             <tr>
               <th>性別：</th>

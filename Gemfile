@@ -71,3 +71,4 @@ gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
 gem 'ransack'
 gem 'dotenv-rails'
+gem 'impressionist', '~>1.6.1'

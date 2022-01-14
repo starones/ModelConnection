@@ -44,11 +44,11 @@
                   </tr>
                   <tr>
                     <th>自己PR：</th>
-                    <th><%= @actor.body %></th>
+                    <th><%= simple_format(h(@actor.body)) %></th>
                   </tr>
                   <tr>
                     <th>出演経歴：</th>
-                    <th><%= @actor.career %></th>
+                    <th><%= simple_format(h(@actor.career)) %></th>
                   </tr>
                   <tr>
                     <th>連絡先：</th>
