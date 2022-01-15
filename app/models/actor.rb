@@ -6,6 +6,10 @@ class Actor < ApplicationRecord
 
    has_many :favorites, dependent: :destroy
    attachment :image
+   
+  # メールアドレスのバリデーション
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :email, presence: true, uniqueness: true, format: { with: VALID_EMAIL_REGEX }
 
   # ------お気に入り機能-----------
    def favorited_by?(client)
