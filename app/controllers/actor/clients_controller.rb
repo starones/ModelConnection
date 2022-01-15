@@ -4,6 +4,4 @@ class Actor::ClientsController < ApplicationController
     @clients = Client.all
   end
 
-  def show
-  end
 end

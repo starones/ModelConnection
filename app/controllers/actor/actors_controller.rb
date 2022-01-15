@@ -1,5 +1,6 @@
 class Actor::ActorsController < ApplicationController
 
+  before_action :authenticate_actor!,except: [:index, :show]
   #更新しても閲覧数がカウントしないように設定したため下記２つ「, unique: [:ip_address]」を消すと閲覧数は上がる
   impressionist :actions => [:show], unique: [:ip_address]
 
@@ -16,12 +17,21 @@ class Actor::ActorsController < ApplicationController
 
   def edit
     @actor = Actor.find(params[:id])
+    # ------ログインユーザーとidが一致してないとtopに戻すセキュリティー---
+   if @actor.id == current_actor.id
+    render "edit"
+   else
+    redirect_to root_path
+   end
   end
 
   def update
     @actor = Actor.find(params[:id])
-    @actor.update(actor_params)
-    redirect_to actor_path(@actor.id)
+    if @actor.update(actor_params)
+      redirect_to actor_path(@actor.id)
+    else
+      render "edit"
+    end
   end
 
   private

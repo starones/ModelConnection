@@ -8,6 +8,5 @@ class JobRequest < ApplicationRecord
   validates :recruitment_gender, presence: true
   validates :recruitment_gender, presence: true
   validates :money, presence: true
-  validates :contact, presence: true
-  
+
 end
