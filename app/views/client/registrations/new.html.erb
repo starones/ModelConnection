@@ -7,7 +7,7 @@
 	            <h2>クライアント新規登録</h2>
 	          </div>
 	            <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-              <%= render "client/shared/error_messages", resource: resource %>
+              <%= devise_error_messages %>
 	          <div class="login-form mt-4">
 	            <form>
                 <div class="form-row">
