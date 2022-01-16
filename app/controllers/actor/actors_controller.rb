@@ -6,7 +6,7 @@ class Actor::ActorsController < ApplicationController
 
   def index
     @q = Actor.ransack(params[:q])
-    @actors = @q.result(distinct: true)
+    @actors = @q.result(distinct: true).page(params[:page]).per(24)
   end
 
   def show
