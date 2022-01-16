@@ -7,7 +7,7 @@ class Inquiry
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email,
-  :presence => {:message => "メールアドレスに誤りがあります"},
+  :presence => {:message => "メールアドレスを入力してください"},
   format: {with: VALID_EMAIL_REGEX, allow_blank: true }
 
   validates :message, :presence => {:message => "コメントを入力してください"}

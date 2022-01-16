@@ -24,10 +24,15 @@
  }
 
  footer {
-      background-color: #222222;
+    background-color: #222222;
  }
 
+
 // -------ボタン装飾--------
+ .btn-secondary {
+   background-color: #222222;
+ }
+
   .btn {
    position: relative;
    border: none;
@@ -50,35 +55,10 @@
 // --------ここまで-----------
 
 
-// ---------JavaScriptスライドショー機能--------
- .top_image1 {
-  background-image: url(top_image1.jpg);
- }
-
-.top_image2 {
-  background-image: url(top_image2.jpg);
-}
-
-.top_image3 {
-  background-image: url(assets/top_image3.jpg);
-}
-
-.top_image4 {
-  background-image: url(top_image4.jpg);
-}
-
-.top_image5 {
-  background-image: url(top_image5.jpg);
-}
-
-.box {
-  height: 600px;
-}
-
 // --------thanksページ-------
 .thanks {
-  margin-top: 200px;
-  margin-bottom: 200px;
+  padding-top: 200px;
+  padding-bottom: 200px;
 }
 
 // --------aboutページ----------
@@ -117,3 +97,33 @@
   .favorite-text {
     color: #000000;
   }
+
+  // ---------inquiry/indexページ----------
+  .contact-us {
+    background-color: #222222;
+  }
+
+  // ---------JavaScriptスライドショー機能--------
+ .top_image1 {
+  background-image: url(top_image1.jpg);
+ }
+
+.top_image2 {
+  background-image: url(top_image2.jpg);
+}
+
+.top_image3 {
+  background-image: url(assets/top_image3.jpg);
+}
+
+.top_image4 {
+  background-image: url(top_image4.jpg);
+}
+
+.top_image5 {
+  background-image: url(top_image5.jpg);
+}
+
+.box {
+  height: 600px;
+}
