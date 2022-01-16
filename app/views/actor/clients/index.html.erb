@@ -1,5 +1,5 @@
-<h1>クライアント一覧画面</h1>
-  <div class="container">
+<h1 class="py-2 bg-dark text-white text-center"><strong>CLIENT LIST</strong></h1>
+  <div class="container pt-5 pb-3">
     <div class="row">
       <% @clients.each do |client| %>
         <div class="col-lg-3 col-md-6">
@@ -12,4 +12,8 @@
         </div>
       <% end %>
     </div>
+  </div>
+
+  <div class="d-flex align-items-center justify-content-center pb-5">
+    <%= paginate @clients %>
   </div>
