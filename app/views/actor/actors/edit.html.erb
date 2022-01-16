@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row d-flex align-items-center justify-content-center">
-        <div class="border col-7 my-5">
-            <h2 class="my-3 ">モデル編集</h2>
+        <div class="border col-7 my-5 bg-white">
+            <h2 class="my-3 text-center"><label class="actor-label py-1 px-3" >My page</label></h2>
             <div class="row">
                 <div class="col-md">
                     <%= form_with model: @actor, url: actor_path(@actor), local:true do |f| %>
@@ -11,7 +11,7 @@
                                     <%= f.text_field :name %>
                                 </div>
                                 <div class="form-group">
-                                    <label>MY写真:</label><br/>
+                                    <label>My写真:</label><br/>
                                     <%= f.attachment_field :image %>
                                 </div>
                                 <div class="form-group">
@@ -43,26 +43,26 @@
                                 </div>
                                  <div class="form-group">
                                     <label>連絡先:</label><br/>
-                                    <%= f.text_field :contact %>
+                                    <%= f.text_field :contact, class: "form-control", placeholder:"例 : SNSアカウントにご連絡ください。" %>
                                 </div>
                                 <div class="form-group">
                                     <label>Instagramアカウント名:</label><br/>
-                                    <%= f.text_field :instagram_rink %>
+                                    <%= f.text_field :instagram_rink, class: "form-control", placeholder:"例 : mode_connection" %>
                                 </div>
                                 <div class="form-group">
                                     <label>Twitterアカウント名:</label><br/>
-                                    <%= f.text_field :twitter_rink %>
+                                    <%= f.text_field :twitter_rink, class: "form-control", placeholder:"例 : mode_connection" %>
                                 </div>
                                 <div class="form-group">
                                     <label>TikTokアカウント名:</label><br/>
-                                    <%= f.text_field :tiktok_rink %>
+                                    <%= f.text_field :tiktok_rink, class: "form-control", placeholder:"例 : @mode_connection" %>
                                 </div>
                                 <div class="form-group">
                                     <label>その他リンク先:</label><br/>
-                                    <%= f.text_field :others_rink %>
+                                    <%= f.text_field :others_rink, class: "form-control", placeholder:"URLをお貼りください。" %>
                                 </div>
-                                <div class="text-center">
-                                    <%= f.submit "保存", class: "btn btn-secondary" %>
+                                <div class="text-center pb-3">
+                                    <%= f.submit "保存", class: "btn btn-secondary btn-lg" %>
                                 </div>
                             </form>
                     <% end %>

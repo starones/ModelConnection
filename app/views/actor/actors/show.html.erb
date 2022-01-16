@@ -1,14 +1,14 @@
-<div class="container px-5 px-sm-0 mt-5 mb-5">
-    <div class="row">
+<div class="container p-5 px-sm-0 bg-white">
+    <div class="row ml-1">
         <div class="col-md-5">
-          <%= attachment_image_tag @actor, :image, size: "400x400", class:"card-img-top", fallback: "no-image.jpeg" %>
+          <%= attachment_image_tag @actor, :image, size: "400x400", class:"card-img-top border", fallback: "no-image.jpeg" %>
             <div class="row d-flex justify-content-around my-4">
               <!------------インスタアカウントに遷移-------------->
               <a href="https://www.instagram.com/<%= @actor.instagram_rink %>"><i class="fab fa-instagram fa-4x"></i></a>
               <!-------------Twitterアカウントに遷移-------------->
               <a href="https://twitter.com/<%= @actor.twitter_rink %>"><i class="fab fa-twitter fa-4x"></i></a>
               <!------------TikTokアカウントに遷移---------------->
-              <a href="https://www.tiktok.com/<%= @actor.tiktok_rink %>"><i class="fab fa-tiktok fa-4x"></i></a>
+              <a href="https://www.tiktok.com/<%= @actor.tiktok_rink %>"><i class="fab fa-tiktok fa-4x rounded"></i></a>
               <!---------その他自分で設定したurlに遷移------------>
               <a href="<%= @actor.others_rink %>"><i class="fas fa-globe fa-4x"></i></a>
             </div>
@@ -60,7 +60,7 @@
      <div class="row d-flex align-items-center justify-content-center mt-3">
         <% if actor_signed_in? %>
           <% if @actor.id == current_actor.id %>
-            <%= link_to "マイページ編集", edit_actor_path(@actor), class: "btn btn-secondary btn-lgs" %>
+            <%= link_to "編集", edit_actor_path(@actor), class: "btn btn-secondary btn-lg" %>
           <% end %>
         <% end %>
     </div>
