@@ -1,10 +1,10 @@
-<div class="container mt-5 mb-5">
+<div class="container py-5">
   <div class="row text-center">
 	  <div class="col-md-6 offset-md-3">
-	    <div class="card">
+	    <div class="card shadow-lg p-3 mb-5 bg-white rounded">
 	      <div class="card-body">
-	          <div class="login-title mb-3 mt-3">
-	            <h2>クライアント新規登録</h2>
+	          <div class="login-title mb-3 mt-2">
+	            <h1 class="bg-dark text-white text-center">新規登録</h1>
 	          </div>
 	            <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
               <%= devise_error_messages %>
@@ -31,7 +31,7 @@
                     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
                   </div>
                   <div class="form-group col-md-12 mt-3">
-                    <%= f.submit "新規登録", class: "btn btn-secondary btn-lg" %>
+                    <%= f.submit "登録", class: "btn btn-secondary btn-lg" %>
                   </div>
                 </div>
               <% end %>
