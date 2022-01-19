@@ -1,29 +1,29 @@
 <div class="container">
     <div class="row d-flex align-items-center justify-content-center">
-        <div class="border col-4 my-5">
-            <h2 class="text-center mt-3">マイページ編集</h2>
+        <div class="border col-5 my-5 bg-white">
+            <h1 class="py-1 mt-3 bg-dark text-white text-center"><strong>My page</strong></h1>
             <div class="row">
                 <div class="col-md my-4">
                   <%= form_with model: @client, url:client_client_path(@client.id), local:true do |f| %>
                           <form>
                               <div class="form-group">
                                   <label>名前（クライアント名）:</label><br/>
-                                  <%= f.text_field :name %>
+                                  <%= f.text_field :name, class:"w-50" %>
                               </div>
                               <div class="form-group">
                                   <label>プロフィール写真:</label><br/>
-                                  <%= f.attachment_field :image %>
+                                  <%= f.attachment_field :image, class:"w-100" %>
                               </div>
                               <div class="form-group">
                                   <label>自己紹介:</label><br/>
-                                  <%= f.text_area :body, class: "form-control" %>
+                                  <%= f.text_area :body, class: "form-control pb-4" %>
                               </div>
                                <div class="form-group">
                                   <label>連絡先:</label><br/>
-                                  <%= f.text_field :contact %>
+                                  <%= f.text_field :contact, class:"w-50" %>
                               </div>
-                              <div class="text-center">
-                                  <%= f.submit "保存", class: "btn btn-secondary" %>
+                              <div class="text-center mt-4">
+                                  <%= f.submit "保存", class: "btn btn-secondary btn-lg" %>
                               </div>
                           </form>
                   <% end %>

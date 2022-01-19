@@ -13,13 +13,15 @@
               <a href="<%= @actor.others_rink %>"><i class="fas fa-globe fa-4x"></i></a>
             </div>
         </div>
-
+        
+        <!----------お気に入り機能（部分テンプレート）---------->
         <div class="col-md-7">
             <h1 class="row justify-content-between"><%= @actor.name %>
             <div id="favorite-btn_<%= @actor.id %>">
              <%= render 'actor/favorites/favorites', actor: @actor %>
             </div>
             </h1>
+        <!---------------ここまで---------------->
 
                 <table class='table'>
                   <tr>
