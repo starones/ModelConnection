@@ -1,34 +1,33 @@
-<h1>お仕事編集</h1>
 <div class="container">
     <div class="row d-flex align-items-center justify-content-center">
-        <div class="border col-7 my-5">
-            <h2 class="text-center mt-3">お仕事登録</h2>
+        <div class="border col-7 my-5 pt-3 bg-white shadow-lg rounded border-secondary">
+            <h1 class="bg-dark text-white text-center">お仕事編集</h1>
             <div class="row">
                 <div class="col-md my-4">
                   <%= form_with model: @job_request, url:client_job_request_path(@job_request), local:true do |f| %>
                           <form>
                               <div class="form-group">
-                                  <label>お仕事タイトル:</label><br/>
+                                  <label>お仕事タイトル:<span class="text-danger">（必須）</span></label></label><br/>
                                   <%= f.text_field :title %>
                               </div>
                               <div class="form-group">
-                                  <label>仕事内容:</label><br/>
-                                  <%= f.text_area :job_content, class: "form-control" %>
+                                  <label>仕事内容:<span class="text-danger">（必須）</span></label></label><br/>
+                                  <%= f.text_area :job_content, class: "form-control pb-5" %>
                               </div>
                               <div class="form-group">
-                                  <label>募集性別:</label><br/>
+                                  <label>募集性別:<span class="text-danger">（必須）</span></label></label><br/>
                                   <%= f.text_field :recruitment_gender %>
                               </div>
                                <div class="form-group">
-                                  <label>募集身長:</label><br/>
+                                  <label>募集身長:<span class="text-danger">（必須）</span></label></label><br/>
                                   <%= f.text_field :recruitment_stature %>
                               </div>
                               <div class="form-group">
-                                  <label>その他募集内容:</label><br/>
-                                  <%= f.text_area :recruitmebt_other, class: "form-control" %>
+                                  <label>その他募集内容:<span class="text-danger">（必須）</span></label></label><br/>
+                                  <%= f.text_area :recruitmebt_other, class: "form-control pb-5" %>
                               </div>
                               <div class="form-group">
-                                  <label>報酬金:</label><br/>
+                                  <label>報酬金:<span class="text-danger">（必須）</span></label></label><br/>
                                   <%= f.text_field :money %>円
                               </div>
                               <div class="form-group">

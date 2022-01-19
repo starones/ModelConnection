@@ -1,9 +1,10 @@
-<h1>お仕事詳細画面</h1>
-  <div class="container my-5">
-    <div class="row">
+<h1 class="py-2 bg-dark text-white text-center"><strong>JOB DETAILS</strong></h1>
+
+  <div class="container py-5">
+    <div class="row bg-white shadow-lg rounded border border-secondary">
       <div class="col-11">
-        <h1 class="mb-3"><%= @job_request.title %></h1>
-         <table class='table'>
+        <h1 class="my-3 ml-2"><strong><%= @job_request.title %></strong></h1>
+         <table class='table ml-5'>
             <tr>
               <th class="col-3">仕事内容：</th>
               <th><%= simple_format(h(@job_request.job_content)) %></th>
@@ -29,13 +30,13 @@
               <th><a href="<%= @job_request.contact %>"><%= @job_request.contact %></a></th>
             </tr>
          </table>
-         <div class="row d-flex align-items-center justify-content-center mt-3">
+         <div class="row d-flex align-items-center justify-content-center my-3">
             <% if client_signed_in? %>
               <% if @job_request.client_id == current_client.id %>
               <div class="mr-4">
-                <%= link_to "編集", edit_client_job_request_path(@job_request), class: "btn btn-secondary btn-lgs" %>
+                <%= link_to "編集", edit_client_job_request_path(@job_request), class: "btn btn-secondary btn-lg" %>
               </div>
-                <%= link_to "削除", client_job_request_path(@job_request), method: :delete, class: "btn btn-secondary btn-lgs" %>
+                <%= link_to "削除", client_job_request_path(@job_request), method: :delete, "data-confirm" => "削除しますか?", class: "btn btn-secondary btn-lg" %>
               <% end %>
             <% end %>
          </div>

@@ -1,27 +1,32 @@
-<div class="container">
-  <div class="row text-center">
-    <h1>登録お仕事一覧</h1>
-      <table class="table">
-        <thead>
-          <tr>
-            <th></th>
-            <th scope="col">タイトル</th>
-            <th scope="col ml-2">登録日</th>
-            <th scope="col"></th>
-            <th scope="col"></th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @job_requests.each.with_index(1) do |job_request, i| %>
-            <tr>
-              <td><%= i %></td>
-              <td><%= job_request.title %></td>
-              <td><%= job_request.created_at.strftime("%Y/%m/%d") %></td>
-              <td class="text-right"><%= link_to "詳細", client_job_request_path(job_request), class: "btn btn-secondary" %></td>
-              <td class="text-center"><%= link_to "削除", client_job_request_path(job_request), method: :delete, class: "btn btn-secondary btn-lgs" %></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-    </div>
-</div>
+<h1 class="py-3 bg-dark text-white text-center"><strong>REGISTERED JOB</strong></h1>
+
+  <% if @job_requests.present? %>
+    <div class="container pb-5">
+      <div class="row text-center mt-5 bg-white">
+          <table class="table">
+            <thead>
+              <tr>
+                <th></th>
+                <th scope="col">タイトル</th>
+                <th scope="col ml-2">登録日</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @job_requests.each.with_index(1) do |job_request, i| %>
+                <tr>
+                  <td><%= i %></td>
+                  <td><%= job_request.title %></td>
+                  <td><%= job_request.created_at.strftime("%Y/%m/%d") %></td>
+                  <td class="text-right"><%= link_to "詳細", client_job_request_path(job_request), class: "btn btn-secondary" %></td>
+                  <td class="text-center"><%= link_to "削除", client_job_request_path(job_request), method: :delete, "data-confirm" => "削除しますか?", class: "btn btn-secondary btn-lgs" %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+  <% else %>
+    <h1 class="text-center job_request">登録されたお仕事がありません。</h1>
+  <% end %>

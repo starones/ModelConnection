@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row d-flex align-items-center justify-content-center">
-        <div class="border col-7 my-5">
-            <h2 class="text-center mt-3">お仕事登録</h2>
+        <div class="border col-7 my-5 bg-white shadow-lg rounded border-secondary">
+            <h1 class="py-3 mt-3 bg-dark text-white text-center"><strong>JOB CREATE</strong></h1>
             <div class="row">
                 <div class="col-md my-4">
                   <%= form_with model: @job_request, url:client_job_requests_path, local:true do |f| %>
@@ -12,7 +12,7 @@
                               </div>
                               <div class="form-group">
                                   <label>仕事内容:<span class="text-danger">（必須）</span></label><br/>
-                                  <%= f.text_area :job_content, class: "form-control" %>
+                                  <%= f.text_area :job_content, class: "form-control pb-5" %>
                               </div>
                               <div class="form-group">
                                   <label>募集性別:<span class="text-danger">（必須）</span></label><br/>
@@ -24,7 +24,7 @@
                               </div>
                               <div class="form-group">
                                   <label>その他募集内容:<span class="text-danger">（必須）</span></label><br/>
-                                  <%= f.text_area :recruitmebt_other, class: "form-control" %>
+                                  <%= f.text_area :recruitmebt_other, class: "form-control pb-5" %>
                               </div>
                               <div class="form-group">
                                   <label>報酬金:<span class="text-danger">（必須）</span></label><br/>
@@ -32,10 +32,10 @@
                               </div>
                               <div class="form-group">
                                   <label>依頼主url:</label><br/>
-                                  <%= f.text_field :contact %>
+                                  <%= f.text_field :contact, placeholder:"例:https://modelconnection", class:"w-75" %>
                               </div>
                               <div class="text-center">
-                                  <%= f.submit "登録", class: "btn btn-secondary" %>
+                                  <%= f.submit "登録", class: "btn btn-secondary btn-lg" %>
                               </div>
                           </form>
                   <% end %>

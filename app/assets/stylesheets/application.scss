@@ -103,6 +103,16 @@
     background-color: #222222;
   }
 
+  //-------- ログイン、新規登録画面の枠色--------
+  .shadow-lg {
+  border-color: #222222;
+  }
+
+  //-------client/job_request/indexページ--------
+  .job_request {
+      padding: 100px 0 100px 0;
+  }
+
   // ---------JavaScriptスライドショー機能--------
  .top_image1 {
   background-image: url(top_image1.jpg);
@@ -127,7 +137,4 @@
 .box {
   height: 600px;
 }
-
-.shadow-lg {
-  border-color: #222222;
-}
+// ----------------ここまで--------------

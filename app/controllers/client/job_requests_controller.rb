@@ -12,11 +12,11 @@ class Client::JobRequestsController < ApplicationController
 
   def edit
     @job_request = JobRequest.find(params[:id])
-    if @client.id == current_client.id
+    if @job_request.client.id == current_client.id
     render "edit"
-   else
+    else
     redirect_to root_path
-   end
+    end
   end
 
   def new
