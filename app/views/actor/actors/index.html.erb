@@ -1,5 +1,6 @@
 <h1 class="py-3 bg-dark text-white text-center"><strong>MODEL LIST</strong></h1>
 
+<!-----------ransack検索機能------------->
 <div class="d-flex align-items-center justify-content-center mt-4 mb-3">
   <span class="border border-secondary py-3 px-5 bg-white">
     <%= search_form_for @q do |f| %>
@@ -28,22 +29,21 @@
   <%= sort_link(@q, :created_at, "登録日") %>
 </div>
 </div>
-
-
+<!--------------ここまで----------------->
 
     <div class="row p-5">
       <% @actors.each do |actor| %>
         <div class="col-lg-3 col-md-6">
           <div class="card mx-auto mb-4 bg-dark text-white">
             <%= link_to actor_path(actor) do %>
-              <%= attachment_image_tag actor, :image, size: "210x300", class:"card-img-top", fallback: "no-image.jpeg" %>
+              <%= attachment_image_tag actor, :image, size: "210x370", class:"card-img-top", fallback: "no-image.jpeg" %>
             <% end %>
               <p class="card-text text-center"><%= actor.name %></p>
           </div>
         </div>
       <% end %>
     </div>
-    
+
     <div class="d-flex align-items-center justify-content-center">
     <%= paginate @actors %>
     </div>
