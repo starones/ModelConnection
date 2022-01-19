@@ -48,12 +48,11 @@
  }
 
  .btn:hover {
-   box-shadow: 10px 10px 0px #4b0082;
-   top: -5px;
-   left: -5px;
+   background: #444444;
+   box-shadow: 0 0 5px #222222, 0 0 25px
+   #222222, 0 0 25px #222222, 0 0 50px #222222;
  }
 // --------ここまで-----------
-
 
 // --------thanksページ-------
 .thanks {
@@ -71,8 +70,16 @@
   color: #FF6347;
 }
 
+.fa-instagram:hover {
+  color: #9932CC;
+}
+
 .fa-twitter {
   color: #00BFFF;
+}
+
+.fa-twitter:hover {
+  color: #C2EEFF;
 }
 
 .fa-tiktok {
@@ -80,61 +87,102 @@
   background-color: #000000;
 }
 
+.fa-tiktok:hover {
+  color: #000000;
+  background-color: #ffffff;
+}
+
 .fa-globe {
   color: #0000FF;
 }
 
+.fa-globe:hover {
+  color: #6495ED;
+}
+
 // ------actor/editページ--------
-  .actor-label {
-   background-color: #EEEEEE;
-  }
+.actor-label {
+ background-color: #EEEEEE;
+}
 
-  //------actor/client/favoritesページ------
-  .fa-star {
-    color: 	#FFD700;
-  }
+//------actor/client/favoritesページ------
+.fa-star {
+  color: 	#FFD700;
+}
 
-  .favorite-text {
-    color: #000000;
-  }
+.favorite-text {
+  color: #000000;
+}
 
-  // ---------inquiry/indexページ----------
-  .contact-us {
-    background-color: #222222;
-  }
+// ---------inquiry/indexページ----------
+.contact-us {
+  background-color: #222222;
+}
 
-  //-------- ログイン、新規登録画面の枠色--------
-  .shadow-lg {
-  border-color: #222222;
-  }
+//-------- ログイン、新規登録画面の枠色--------
+.shadow-lg {
+border-color: #222222;
+}
 
-  //-------client/job_request/indexページ--------
-  .job_request {
-      padding: 100px 0 100px 0;
-  }
+//-------client/job_request/indexページ--------
+.job_request {
+    padding: 100px 0 100px 0;
+}
 
-  // ---------JavaScriptスライドショー機能--------
- .top_image1 {
-  background-image: url(top_image1.jpg);
- }
+// ---------JavaScriptスライドショー機能--------
+.top_image1 {
+background-image: url(top_image1.jpg);
+}
 
 .top_image2 {
-  background-image: url(top_image2.jpg);
+background-image: url(top_image2.jpg);
 }
 
 .top_image3 {
-  background-image: url(assets/top_image3.jpg);
+background-image: url(assets/top_image3.jpg);
 }
 
 .top_image4 {
-  background-image: url(top_image4.jpg);
+background-image: url(top_image4.jpg);
 }
 
 .top_image5 {
-  background-image: url(top_image5.jpg);
+background-image: url(top_image5.jpg);
 }
 
 .box {
-  height: 600px;
+height: 600px;
 }
 // ----------------ここまで--------------
+
+
+// --------actor/indexのjavascript機能-------
+.card {
+    position:relative;
+    background:#ddd;
+    margin:20px auto;
+    overflow:hidden;
+}
+
+.caption1 {
+    position:absolute;
+    left:0;
+    top: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    color:#fff;
+    width: 100%;
+    height: 100%;
+    padding-top: 80px;
+}
+
+// --------actor/homes/topのjavascript機能-------
+.caption2 {
+    position:absolute;
+    left:0;
+    top: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    color:#fff;
+    width: 100%;
+    height: 100%;
+    padding-top: 40px;
+}

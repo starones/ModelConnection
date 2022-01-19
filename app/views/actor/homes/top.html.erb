@@ -19,7 +19,21 @@
         <div class="col-lg-3 col-md-6">
           <div class="card mx-auto mb-4 bg-dark text-white">
             <%= link_to actor_path(actor) do %>
-              <%= attachment_image_tag actor, :image, size: "210x360", class:"card-img-top", fallback: "no-image.jpeg" %>
+              <%= attachment_image_tag actor, :image, size: "210x300", class:"card-img-top", fallback: "no-image.jpeg" %>
+              <!-------------javascript(jquery)の機能-------------->
+              <div class="caption2 text-center">
+                <h3 class="mb-5"><strong><%= actor.name %></strong></h3>
+                <h5>Bron：<%= actor.born_year %>/<%= actor.born_month %>/<%= actor.born_day %></h5>
+                <h5 class="my-3">Age：<%= actor.age %></h5>
+                <h5>Gender：
+                    <% if actor.gender == true %>
+                        <th>Woman</th>
+                    <% else %>
+                        <th>Men</th>
+                    <% end %>
+                </h5>
+              </div>
+              <!-------------------ここまで---------------->
             <% end %>
               <p class="card-text text-center"><%= actor.name %></p>
           </div>
@@ -36,7 +50,19 @@
         <div class="col-lg-3 col-md-6">
           <div class="card mx-auto mb-4 bg-dark text-white">
             <%= link_to actor_path(actor) do %>
-              <%= attachment_image_tag actor, :image, size: "210x360", class:"card-img-top", fallback: "no-image.jpeg" %>
+              <%= attachment_image_tag actor, :image, size: "210x300", class:"card-img-top", fallback: "no-image.jpeg" %>
+              <div class="caption2 text-center">
+                <h3 class="mb-5"><strong><%= actor.name %></strong></h3>
+                <h5>Bron：<%= actor.born_year %>/<%= actor.born_month %>/<%= actor.born_day %></h5>
+                <h5 class="my-3">Age：<%= actor.age %></h5>
+                <h5>Gender：
+                    <% if actor.gender == true %>
+                        <th>Woman</th>
+                    <% else %>
+                        <th>Men</th>
+                    <% end %>
+                </h5>
+              </div>
             <% end %>
               <p class="card-text text-center"><%= actor.name %></p>
           </div>
@@ -47,3 +73,18 @@
     <%= link_to "モデル一覧へ>>", actors_path %>
   </div>
 </div>
+
+<!---------javascript機能-------------->
+<script>
+$(function () {
+    $('.card').hover(function () {
+        $('.caption2', this).animate({
+            top: "0%"
+        }, 500);
+    }, function () {
+        $('.caption2', this).animate({
+            top: "100%"
+        }, 500);
+    });
+});
+</script>
