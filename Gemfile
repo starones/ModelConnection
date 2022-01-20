@@ -73,3 +73,7 @@ gem 'ransack'
 gem 'dotenv-rails'
 gem 'impressionist', '~>1.6.1'
 gem 'devise-i18n'
+
+group :production do
+  gem 'mysql2'
+end
