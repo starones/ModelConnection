@@ -36,7 +36,7 @@
         <div class="col-lg-3 col-md-6">
           <div class="card mx-auto mb-4 bg-dark text-white">
             <%= link_to actor_path(actor) do %>
-              <%= attachment_image_tag actor, :image, size: "210x370", class:"card-img-top", fallback: "no-image.jpeg" %>
+              <%= attachment_image_tag actor, :image, size: "210x370", class:"card-img-top", fallback: asset_path("no-image.jpeg") %>
               <!----------javascript(jquery)機能-------------->
               <div class="caption1 text-center">
                 <h3 class="mb-5"><strong><%= actor.name %></strong></h3>
