@@ -141,21 +141,6 @@ border-color: #222222;
     height: 100%;
     padding-top: 40px;
 }
-// --------actor/homes/topのjavascript文字スライド機能(理解は全くしていない)-------
-.top_text {
-  padding-right: 5%;
-  padding-top: 15%;
-  text-align: right;
-  font-size: 70px;
-  color: #fff;
-}
-
-.eachTextAnime span{opacity: 0;}
-.eachTextAnime.appeartext span{ animation:text_anime_on 1s ease-out forwards; }
-@keyframes text_anime_on {
-  0% {opacity:0;}
-  100% {opacity:1;}
-}
 
 // ---------JavaScriptスライドショー機能--------
 .top_image1 {
