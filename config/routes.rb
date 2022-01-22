@@ -19,7 +19,6 @@ Rails.application.routes.draw do
       get :favorites, on: :collection
     end
     resources :job_requests
-    get 'search' => 'searchs#search'
   end
 
   # ____モデル側____
@@ -30,11 +29,9 @@ Rails.application.routes.draw do
     resource :favorites, only:[:create, :destroy]
     end
     resources :job_requests, only:[:index]
-    resources :clients, only:[:index, :show]
-    get 'search' => 'searchs#search'
+    resources :clients, only:[:index]
     get 'inquiry' => 'inquiries#index'
     post 'inquiry/confirm' => 'inquiries#confirm'
     post 'inquiry/thanks' => 'inquiries#thanks'
   end
-
 end
