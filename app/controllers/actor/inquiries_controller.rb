@@ -1,5 +1,4 @@
 class Actor::InquiriesController < ApplicationController
-
   def index
     @inquiry = Inquiry.new
     render :action => 'index'
@@ -13,7 +12,6 @@ class Actor::InquiriesController < ApplicationController
     else
       render :action => 'index'
     end
-
   end
 
   def thanks
@@ -21,5 +19,4 @@ class Actor::InquiriesController < ApplicationController
     InquiryMailer.received_email(@inquiry).deliver
     render :action => 'thanks'
   end
-
 end

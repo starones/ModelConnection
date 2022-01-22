@@ -1,5 +1,4 @@
 class JobRequest < ApplicationRecord
-
   belongs_to :client
 
   validates :title, presence: true
@@ -8,5 +7,4 @@ class JobRequest < ApplicationRecord
   validates :recruitment_stature, presence: true
   validates :recruitmebt_other, presence: true
   validates :money, presence: true
-
 end

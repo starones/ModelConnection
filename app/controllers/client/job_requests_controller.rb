@@ -1,6 +1,5 @@
 class Client::JobRequestsController < ApplicationController
-
-  before_action :authenticate_client!,except: [:show]
+  before_action :authenticate_client!, except: [:show]
 
   def index
     @job_requests = current_client.job_requests.page(params[:page])
@@ -13,9 +12,9 @@ class Client::JobRequestsController < ApplicationController
   def edit
     @job_request = JobRequest.find(params[:id])
     if @job_request.client.id == current_client.id
-    render "edit"
+      render "edit"
     else
-    redirect_to root_path
+      redirect_to root_path
     end
   end
 
@@ -26,7 +25,7 @@ class Client::JobRequestsController < ApplicationController
   def create
     @job_request = JobRequest.new(job_request_params)
     @job_request.client_id = current_client.id
-    if  @job_request.save
+    if @job_request.save
       redirect_to client_job_requests_path
     else
       render "new"
@@ -49,7 +48,9 @@ class Client::JobRequestsController < ApplicationController
   end
 
   private
+
   def job_request_params
-    params.require(:job_request).permit(:title, :job_content, :recruitment_gender, :recruitment_stature, :recruitmebt_other, :money, :contact)
+    params.require(:job_request).permit(:title, :job_content, :recruitment_gender,
+    :recruitment_stature, :recruitmebt_other, :money, :contact)
   end
 end

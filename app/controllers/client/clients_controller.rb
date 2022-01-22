@@ -1,6 +1,5 @@
 class Client::ClientsController < ApplicationController
-
-  before_action :authenticate_client!,except: [:show]
+  before_action :authenticate_client!, except: [:show]
 
   def show
     @client = Client.find(params[:id])
@@ -10,10 +9,10 @@ class Client::ClientsController < ApplicationController
     @client = Client.find(params[:id])
     # ------ログインユーザーとidが一致してないとtopに戻すセキュリティー---
     if @client.id == current_client.id
-    render "edit"
-   else
-    redirect_to root_path
-   end
+      render "edit"
+    else
+      redirect_to root_path
+    end
   end
 
   def update
@@ -23,8 +22,6 @@ class Client::ClientsController < ApplicationController
     else
       render "edit"
     end
-
-
   end
 
   def favorites
@@ -33,6 +30,7 @@ class Client::ClientsController < ApplicationController
   end
 
   private
+
   def client_params
     params.require(:client).permit(:name, :image, :body, :contact)
   end

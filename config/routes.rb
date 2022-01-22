@@ -29,7 +29,7 @@ Rails.application.routes.draw do
     resources :actors, only:[:index, :show, :edit, :update] do
     resource :favorites, only:[:create, :destroy]
     end
-    resources :job_requests, only:[:index, :show]
+    resources :job_requests, only:[:index]
     resources :clients, only:[:index, :show]
     get 'search' => 'searchs#search'
     get 'inquiry' => 'inquiries#index'

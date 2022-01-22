@@ -4,8 +4,8 @@ class Actor < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-   has_many :favorites, dependent: :destroy
-   attachment :image
+  has_many :favorites, dependent: :destroy
+  attachment :image
 
   # 名前とメールアドレスのバリデーション
   validates :name, presence: true
@@ -13,9 +13,9 @@ class Actor < ApplicationRecord
   validates :email, presence: true, uniqueness: true, format: { with: VALID_EMAIL_REGEX }, allow_blank: true
 
   # ------お気に入り機能-----------
-   def favorited_by?(client)
-     favorites.where(client_id: client.id).exists?
-   end
+  def favorited_by?(client)
+    favorites.where(client_id: client.id).exists?
+  end
 
   # -----トラッキング機能（PV数）------
   is_impressionable counter_cache: true
