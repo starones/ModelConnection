@@ -1,12 +1,15 @@
 <div class="container py-5">
-  <div class="row text-center">
-	  <div class="col-md-6 offset-md-3">
+  <div class="row text-center d-flex align-items-center justify-content-center">
+	  <div class="col-md-7">
 	    <div class="card shadow-lg p-3 bg-white rounded">
 	      <div class="card-body">
-  	        <div class="login-title mb-3">
-  	          <h1 class="bg-dark text-white text-center"><strong>Client log-in</strong></h1>
-  	        </div>
-	            <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+	        <div class="login-title mb-3">
+	          <h1 class="bg-dark text-white text-center"><strong>Client log-in</strong></h1>
+	        </div>
+  	        <!--------アラートメッセージ------->
+  	        <h5 class="alert-danger"><strong><%= alert %></strong></h5>
+  	        <!-----------ここまで-------------->
+	        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 	          <div class="login-form mt-4">
 	            <form>
                 <div class="form-row">
@@ -32,9 +35,9 @@
                   <div class="form-group col-md-12">
                     <%= f.submit "ログイン", class: "btn btn-secondary btn-lg" %>
                   </div>
-              <% end %>
               </form>
 	          </div>
+          <% end %>
 	           <div class="logi-forgot text-right mt-2">
 	             登録がお済みでない方は<%= render "client/shared/links" %>
 	           </div>

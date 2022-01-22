@@ -1,6 +1,8 @@
+<div class="text-center alert-info"><%= notice %></div>
+
 <div class="container p-5 px-sm-0 bg-white border border-secondary shadow-lg">
     <div class="row ml-1">
-        <div class="col-md-5">
+        <div class="col-lg-5 mr-3">
           <%= attachment_image_tag @actor, :image, size: "400x500", class:"card-img-top border", fallback: asset_path("no-image.jpeg")  %>
             <div class="row d-flex justify-content-around my-4">
               <!------------インスタアカウントに遷移-------------->
@@ -15,7 +17,7 @@
         </div>
 
         <!----------お気に入り機能（部分テンプレート）---------->
-        <div class="col-md-7">
+        <div class="col-lg-6">
             <h1 class="row justify-content-between"><%= @actor.name %>
             <div id="favorite-btn_<%= @actor.id %>">
              <%= render 'actor/favorites/favorites', actor: @actor %>

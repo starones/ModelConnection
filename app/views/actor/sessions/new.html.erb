@@ -1,40 +1,43 @@
 <div class="container py-5">
-  <div class="row text-center">
-	  <div class="col-md-6 offset-md-3">
+  <div class="row text-center d-flex align-items-center justify-content-center">
+	  <div class="col-md-7">
 	    <div class="card shadow-lg p-3 bg-white rounded">
 	      <div class="card-body">
-	          <div class="login-title mb-3">
-	            <h1 class="bg-dark text-white text-center"><strong>Model log-in</strong></h1>
-	          </div>
-	            <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-	          <div class="login-form mt-4">
-	            <form>
-                <div class="form-row">
-                  <div class="form-group col-md-12">
-                    <%= f.label :email %><br />
-                    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-                  </div>
-                  <div class="form-group col-md-12">
-                    <%= f.label "パスワード" %><br />
-                    <%= f.password_field :password, autocomplete: "current-password" %>
-                  </div>
-                </div>
-                  <% if devise_mapping.rememberable? %>
-                  <div class="form-row ml-5">
-                    <div class="form-group col-md-10">
-                      <div class="form-check">
-                        <%= f.check_box :remember_me %>
-                        <%= f.label :remember_me %>
-                      </div>
+          <div class="login-title mb-3">
+            <h1 class="bg-dark text-white text-center"><strong>Model log-in</strong></h1>
+	        </div>
+	          <!--------アラートメッセージ------->
+  	        <h5 class="alert-danger"><strong><%= alert %></strong></h5>
+  	        <!-----------ここまで-------------->
+  	         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  	          <div class="login-form mt-4">
+  	            <form>
+                  <div class="form-row">
+                    <div class="form-group col-md-12">
+                      <%= f.label :email %><br />
+                      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+                    </div>
+                    <div class="form-group col-md-12">
+                      <%= f.label "パスワード" %><br />
+                      <%= f.password_field :password, autocomplete: "current-password" %>
                     </div>
                   </div>
-                  <% end %>
-                  <div class="form-group col-md-12">
-                    <%= f.submit "ログイン", class: "btn btn-secondary btn-lg" %>
-                  </div>
-              <% end %>
-              </form>
-	          </div>
+                    <% if devise_mapping.rememberable? %>
+                    <div class="form-row ml-5">
+                      <div class="form-group col-md-10">
+                        <div class="form-check">
+                          <%= f.check_box :remember_me %>
+                          <%= f.label :remember_me %>
+                        </div>
+                      </div>
+                    </div>
+                    <% end %>
+                    <div class="form-group col-md-12">
+                      <%= f.submit "ログイン", class: "btn btn-secondary btn-lg" %>
+                    </div>
+                </form>
+  	          </div>
+            <% end %>
 	           <div class="logi-forgot text-right mt-2">
 	             登録がお済みでない方は<%= render "actor/shared/links" %>
 	           </div>
