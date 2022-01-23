@@ -6,22 +6,30 @@
           <%= attachment_image_tag @actor, :image, size: "400x600", class:"card-img-top border", fallback: asset_path("no-image.jpeg")  %>
             <div class="row d-flex justify-content-around my-4">
               <!------------インスタアカウントに遷移-------------->
-             <a href="https://www.instagram.com/<%= @actor.instagram_rink %>"><i class="fab fa-instagram fa-4x"></i></a>
+              <% if @actor.instagram_rink? %>
+                <a href="https://www.instagram.com/<%= @actor.instagram_rink %>"><i class="fab fa-instagram fa-4x"></i></a>
+              <% end %>
               <!-------------Twitterアカウントに遷移-------------->
-              <a href="https://twitter.com/<%= @actor.twitter_rink %>"><i class="fab fa-twitter fa-4x"></i></a>
+              <% if @actor.twitter_rink? %>
+                <a href="https://twitter.com/<%= @actor.twitter_rink %>"><i class="fab fa-twitter fa-4x"></i></a>
+              <% end %>
               <!------------TikTokアカウントに遷移---------------->
-              <a href="https://www.tiktok.com/<%= @actor.tiktok_rink %>"><i class="fab fa-tiktok fa-4x rounded"></i></a>
+              <% if @actor.tiktok_rink? %>
+                <a href="https://www.tiktok.com/<%= @actor.tiktok_rink %>"><i class="fab fa-tiktok fa-4x rounded"></i></a>
+              <% end %>
               <!---------その他自分で設定したurlに遷移------------>
-              <a href="<%= @actor.others_rink %>"><i class="fas fa-globe fa-4x"></i></a>
+              <% if @actor.others_rink? %>
+                <a href="<%= @actor.others_rink %>"><i class="fas fa-globe fa-4x"></i></a>
+              <% end %>
             </div>
         </div>
 
         <!----------お気に入り機能（部分テンプレート）---------->
         <div class="col-lg-6">
             <h1 class="row justify-content-between"><%= @actor.name %>
-            <div id="favorite-btn_<%= @actor.id %>">
-             <%= render 'actor/favorites/favorites', actor: @actor %>
-            </div>
+              <div id="favorite-btn_<%= @actor.id %>">
+                <%= render 'actor/favorites/favorites', actor: @actor %>
+              </div>
             </h1>
         <!---------------ここまで---------------->
 
