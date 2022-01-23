@@ -2,14 +2,16 @@
 
 <!-----------ransack検索機能------------->
 <div class="row d-flex align-items-center justify-content-center mt-4 mb-3 mx-3">
-  <span class="border border-secondary py-3 px-5 bg-white">
+  <span class="r_search border border-secondary py-3 px-5 bg-white">
     <%= search_form_for @q do |f| %>
       <%= f.search_field :name_cont, placeholder:"モデル名", class:"mr-4" %>
 
-      <%= f.search_field :age_gteq, size: "6x6", placeholder:"年齢",  class:"mr-1" %>歳〜
-      <%= f.search_field :age_lt, size: "6x6", placeholder:"年齢",  class:"mr-1" %>歳
 
-      <%= f.search_field :stature_gteq, size: "7x7", placeholder:"身長",  class:"mr-1 ml-4" %>㎝〜
+      <%= f.search_field :age_gteq, size: "6x6", placeholder:"年齢",  class:"mr-1 r_sarch_text" %>歳〜
+      <%= f.search_field :age_lt, size: "6x6", placeholder:"年齢",  class:"mr-1 r_sarch_text" %>歳
+
+
+      <%= f.search_field :stature_gteq, size: "7x7", placeholder:"身長",  class:"mr-1 ml-2" %>㎝〜
       <%= f.search_field :stature_lt, size: "7x7", placeholder:"身長",  class:"mr-1" %>cm
 
     　<%= f.radio_button :gender_eq, '', {:checked => true} %>共通

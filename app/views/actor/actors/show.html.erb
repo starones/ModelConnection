@@ -3,7 +3,7 @@
 <div class="container p-5 px-sm-0 bg-white border border-secondary shadow-lg">
     <div class="row ml-1">
         <div class="col-lg-5 mr-3">
-          <%= attachment_image_tag @actor, :image, size: "400x600", class:"card-img-top border", fallback: asset_path("no-image.jpeg")  %>
+          <%= attachment_image_tag @actor, :image, size: "400x600", class:"r_actor_img card-img-top border", fallback: asset_path("no-image.jpeg")  %>
             <div class="row d-flex justify-content-around my-4">
               <!------------インスタアカウントに遷移-------------->
               <% if @actor.instagram_rink? %>

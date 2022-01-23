@@ -144,27 +144,27 @@ border-color: #222222;
 
 // ---------JavaScriptスライドショー機能--------
 .top_image1 {
-background-image: image-url("top_image1.jpg");
+  background-image: image-url("top_image1.jpg");
 }
 
 .top_image2 {
-background-image: image-url("top_image2.jpg");
+  background-image: image-url("top_image2.jpg");
 }
 
 .top_image3 {
-background-image: image-url("top_image3.jpg");
+  background-image: image-url("top_image3.jpg");
 }
 
 .top_image4 {
-background-image: image-url("top_image4.jpg");
+  background-image: image-url("top_image4.jpg");
 }
 
 .top_image5 {
-background-image: image-url("top_image5.jpg");
+  background-image: image-url("top_image5.jpg");
 }
 
 .box {
-height: 600px;
+  height: 600px;
 }
 // ----------------ここまで--------------
 
@@ -188,3 +188,71 @@ height: 600px;
     padding-top: 80px;
 }
 
+// -------レスポンシブ対応--------
+@media screen and (max-width: 425px) {
+  //------- header--------
+  header {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .r-text {
+    width: 250px;
+    height: 45px;
+  }
+
+  // ------footer----------
+  .r_footer_text {
+    margin-top: 20px;
+  }
+
+  // ----actor/index-----
+  .r_search {
+    text-align: -webkit-center;
+  }
+
+  .r_sarch_text {
+    margin: 10px 0 10px 0;
+  }
+
+  // ----actor/show-----
+  .r_actor_img {
+    height: 300px;
+  }
+
+  // ----top画面-----
+  .top_image1 {
+  background-image: image-url("r_top_image1.jpg");
+  }
+
+  .top_image2 {
+    background-image: image-url("r_top_image2.jpg");
+  }
+
+  .top_image3 {
+    background-image: image-url("r_top_image3.jpg");
+  }
+
+  .top_image4 {
+    background-image: image-url("r_top_image4.jpg");
+  }
+
+  .top_image5 {
+    background-image: image-url("r_top_image5.jpg");
+  }
+
+  // ----inquiry画面-----
+  .r_inquiry{
+    padding-bottom: 50px;
+  }
+  
+  // ----thanks画面-----
+  .thanks {
+    margin-bottom: -100px;
+  }
+  .r_thnks {
+    margin-top: -100px;
+  }
+
+}
