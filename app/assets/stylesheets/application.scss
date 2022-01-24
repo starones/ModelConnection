@@ -210,10 +210,19 @@ border-color: #222222;
   // ----actor/index-----
   .r_search {
     text-align: -webkit-center;
+    margin-left: -10px;
   }
 
-  .r_sarch_text {
-    margin: 10px 0 10px 0;
+  .r_sarch_text1 {
+    margin: 15px 0 15px 0;
+  }
+
+  .r_sarch_text2 {
+    margin-bottom: 15px;
+  }
+
+  .r_sarch_text3 {
+    margin-top: 15px;
   }
 
   // ----actor/show-----
@@ -243,10 +252,14 @@ border-color: #222222;
   }
 
   // ----inquiry画面-----
-  .r_inquiry{
+  .r_inquiry1 {
+    margin-top: -55px;
+    margin-bottom: -55px;
+  }
+  .r_inquiry2{
     padding-bottom: 50px;
   }
-  
+
   // ----thanks画面-----
   .thanks {
     margin-bottom: -100px;
