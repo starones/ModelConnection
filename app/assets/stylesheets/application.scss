@@ -229,6 +229,17 @@ border-color: #222222;
     margin-top: 15px;
   }
 
+  .r_actor_card1 {
+    margin: 0 -50px 0 -50px;
+  }
+
+  .r_actor_card2 {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    padding: 3px;
+  }
+
   // ----actor/show-----
   .r_actor_img {
     height: 300px;
