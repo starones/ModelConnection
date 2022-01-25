@@ -1,10 +1,10 @@
 <h1 class="py-2 bg-dark text-white text-center"><strong>JOB DETAILS</strong></h1>
 
   <div class="container py-5">
-    <div class="row bg-white shadow-lg rounded border border-secondary">
+    <div class="row bg-white shadow-lg rounded border border-secondary mx-1">
       <div class="col-11">
         <h1 class="my-3 ml-2"><strong><%= @job_request.title %></strong></h1>
-         <table class='table ml-5'>
+         <table class='table ml-3'>
             <tr>
               <th class="mr-5">仕事内容：</th>
               <th><%= simple_format(h(@job_request.job_content)) %></th>
