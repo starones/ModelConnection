@@ -75,6 +75,7 @@ gem 'devise-i18n'
 
 group :development do
   gem 'rubocop-airbnb'
+  gem 'pry-byebug'
 end
 
 group :production do
