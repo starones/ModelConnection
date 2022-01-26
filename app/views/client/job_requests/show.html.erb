@@ -26,8 +26,12 @@
               <th><%= @job_request.money %>円</th>
             </tr>
             <tr>
-              <th>依頼元urlまたは連絡先：</th>
-              <th><a href="<%= @job_request.contact %>"><%= @job_request.contact %></a></th>
+              <th>連絡先：</th>
+              <th><%= @job_request.contact %></th>
+            </tr>
+            <tr>
+              <th>依頼者：</th>
+              <th><%= @job_request.client.name %></th>
             </tr>
          </table>
          <div class="row d-flex align-items-center justify-content-center my-3">
