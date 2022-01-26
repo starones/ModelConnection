@@ -31,7 +31,11 @@
             </tr>
             <tr>
               <th>依頼者：</th>
-              <th><%= @job_request.client.name %></th>
+              <th>
+                <%= link_to client_client_path(@job_request.client) do %>
+                <%= @job_request.client.name %>
+                <% end %>
+              </th>
             </tr>
          </table>
          <div class="row d-flex align-items-center justify-content-center my-3">

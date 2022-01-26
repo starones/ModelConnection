@@ -3,6 +3,8 @@ class Client::ClientsController < ApplicationController
 
   def show
     @client = Client.find(params[:id])
+    # viwes/client/job_request/の依頼者:の所で使用
+    @job_request = @client.job_requests
   end
 
   def edit
