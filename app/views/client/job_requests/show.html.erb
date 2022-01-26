@@ -19,7 +19,7 @@
             </tr>
             <tr>
               <th>その他募集内容：</th>
-              <th><%= @job_request.recruitmebt_other %></th>
+              <th><%= simple_format(h(@job_request.recruitmebt_other)) %></th>
             </tr>
             <tr>
               <th>報酬金：</th>
