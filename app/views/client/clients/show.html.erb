@@ -9,7 +9,7 @@
                 <table class='table'>
                   <tr>
                     <th class="mr-5">自己紹介：</th>
-                    <th><%= @client.body %></th>
+                    <th><%=simple_format(h(@client.body)) %></th>
                   </tr>
                   <tr>
                     <th>連絡先：</th>
