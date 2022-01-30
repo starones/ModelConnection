@@ -41,6 +41,6 @@
 - IDE：Cloud9
 
 ## 使用素材
-・[ロゴ作成1](https://www.designevo.com/)<br/>
-・[ロゴ作成2](https://fontmeme.com/ja/)<br/>
+・[ロゴ作成](https://www.designevo.com/)<br/>
+・[フォント作成](https://fontmeme.com/ja/)<br/>
 ・[画像引用](https://pixabay.com/)
