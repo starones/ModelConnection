@@ -1,1 +1,21 @@
-yoo
+<div class="container admin_top">
+  <div class="row text-center">
+    <div class="col-md-6">
+      <%= link_to admin_actors_path do %>
+        <div class="p-5 bg-dark">
+          <h1 class="text-white">MODEL</h1>
+          <p class="text-white mt-3">モデル詳細、編集、管理はこちら</p>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="col-md-6">
+      <%= link_to admin_clients_path do %>
+        <div class="p-5 bg-white text-dark">
+          <h1>CLIENT</h1>
+          <p class="mt-3">クライアント詳細、編集、管理はこちら</p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

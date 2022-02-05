@@ -43,5 +43,7 @@ Rails.application.routes.draw do
   # ------管理者側-------
   namespace :admin do
     get 'top' => 'homes#top'
+    resources :actors, only:[:index, :show, :edit, :update]
+    resources :clients, only:[:index, :show, :edit, :update]
   end
 end
