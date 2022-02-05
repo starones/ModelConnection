@@ -1,1 +1,92 @@
-モデル側の編集画面
+<div class="container">
+    <div class="row d-flex align-items-center justify-content-center">
+        <div class="border col-lg-7 my-5 bg-white">
+            <h2 class="my-3 text-center"><label class="actor-label py-1 px-3" >Model Edit</label></h2>
+            <div class="row">
+                <div class="col-md">
+                    <%= form_with model: @actor, url: admin_actor_path(@actor), local:true do |f| %>
+                            <form>
+                                <div class="form-group">
+                                    <label>名前（モデル名）:<span class="text-danger">（必須）</span></label><br/>
+                                    <%= f.text_field :name %>
+                                </div>
+                                <div class="form-group">
+                                    <label>登録メールアドレス:<span class="text-danger">（必須）</span></label><br/>
+                                    <%= f.text_field :email %>
+                                </div>
+                                <div class="form-group">
+                                    <label>My写真:</label><br/>
+                                    <%= f.attachment_field :image, class:"mb-1"%><br/>
+                                    <!---------プレビュー機能----->
+                                    <img id="preview" style="width:40%;">
+                                    <!----------ここまで---------->
+                                </div>
+                                <div class="form-group">
+                                    <label>生年月日:</label><br/>
+                                    <%= f.text_field :born_year, size: "7x7" %> 年 <%= f.text_field :born_month, size: "7x7" %> 月 <%= f.text_field :born_day, size: "7x7" %> 日
+                                </div>
+                                <div class="form-group">
+                                    <label>年齢:</label><br/>
+                                    <%= f.text_field :age, size: "6x6" %> 歳
+                                </div>
+                                <div class="form-group">
+                                    <label>性別:<span class="text-danger">（必須）</span></label><br/>
+                                    <%= f.radio_button :gender, true %>
+                                    <%= f.label :gender, "女性" %>：
+                                    <%= f.radio_button :gender, false %>
+                                    <%= f.label :gender, "男性" %>
+                                </div>
+                                <div class="form-group">
+                                    <label>身長:</label><br/>
+                                    <%= f.text_field :stature, size: "7x7" %> cm
+                                </div>
+                                <div class="form-group">
+                                    <label>自己PR:</label><br/>
+                                    <%= f.text_area :body, class: "form-control" %>
+                                </div>
+                                <div class="form-group">
+                                    <label>出演経歴:</label><br/>
+                                    <%= f.text_area :career, class: "form-control" %>
+                                </div>
+                                 <div class="form-group">
+                                    <label>連絡先:</label><br/>
+                                    <%= f.text_field :contact, class: "form-control", placeholder:"例 : SNSアカウントにご連絡ください。" %>
+                                </div>
+                                <div class="form-group">
+                                    <label>Instagramアカウント名:</label><br/>
+                                    <%= f.text_field :instagram_rink, class: "form-control", placeholder:"例 : mode_connection" %>
+                                </div>
+                                <div class="form-group">
+                                    <label>Twitterアカウント名:</label><br/>
+                                    <%= f.text_field :twitter_rink, class: "form-control", placeholder:"例 : mode_connection" %>
+                                </div>
+                                <div class="form-group">
+                                    <label>TikTokアカウント名:</label><br/>
+                                    <%= f.text_field :tiktok_rink, class: "form-control", placeholder:"例 : @mode_connection" %>
+                                </div>
+                                <div class="form-group">
+                                    <label>その他リンク先:</label><br/>
+                                    <%= f.text_field :others_rink, class: "form-control", placeholder:"URLをお貼りください。" %>
+                                </div>
+                                <div class="text-center pb-3">
+                                    <%= f.submit "保存", class: "btn btn-secondary btn-lg" %>
+                                </div>
+                            </form>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!---------プレビュー機能（上記も記載あり）----------->
+<script>
+  $('#actor_image').on('change', function (e) {
+    var reader = new FileReader();
+    reader.onload = function (e) {
+        $("#preview").attr('src', e.target.result);
+    }
+    reader.readAsDataURL(e.target.files[0]);
+});
+</script>

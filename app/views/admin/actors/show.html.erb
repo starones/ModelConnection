@@ -1,1 +1,54 @@
-モデル側詳細画面
+ <div class="container py-5">
+    <div class="row bg-white shadow-lg rounded border border-secondary mx-5">
+      <div class="col-11">
+        <h1 class="my-3 ml-2"><strong><%= @actor.name %></strong></h1>
+         <table class='table ml-3'>
+           <tr>
+              <th class="mr-5">ID：</th>
+      	      <th><%= @actor.id %></th>
+            </tr>
+            <tr>
+              <th class="mr-5">登録メールアドレス：</th>
+      	      <th><%= @actor.email %></th>
+            </tr>
+            <tr>
+              <th class="mr-5">生年月日：</th>
+      	      <th><%= @actor.born_year %> 年 <%= @actor.born_month%> 月 <%= @actor.born_day %> 日</th>
+            </tr>
+            <tr>
+              <th>年齢：</th>
+              <th><%= @actor.age %> 歳</th>
+            </tr>
+            <tr>
+              <th>性別：</th>
+              <% if @actor.gender == true %>
+                  <th>女性</th>
+              <% else %>
+                  <th>男性</th>
+              <% end %>
+            </tr>
+            <tr>
+              <th>身長：</th>
+              <th><%= @actor.stature %> cm</th>
+            </tr>
+            <tr>
+              <th>自己PR：</th>
+              <th><%= simple_format(h(@actor.body)) %></th>
+            </tr>
+            <tr>
+              <th>出演経歴：</th>
+              <th><%= simple_format(h(@actor.career)) %></th>
+            </tr>
+            <tr>
+              <th>連絡先：</th>
+              <th><%= @actor.contact %></th>
+            </tr>
+         </table>
+         <div class="row d-flex align-items-center justify-content-center my-3">
+            <% if admin_signed_in? %>
+                <%= link_to "編集", edit_admin_actor_path(@actor), class: "btn btn-secondary btn-lg" %>
+            <% end %>
+         </div>
+      </div>
+    </div>
+  </div>
