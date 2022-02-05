@@ -13,6 +13,11 @@ Rails.application.routes.draw do
     sessions: 'actor/sessions'
   }
 
+  # ----管理者側devise------
+  devise_for :admin, skip: [:registrations, :passwords], controllers: {
+    sessions: "admin/sessions"
+  }
+
   # ____クライアント側____
   namespace :client do
     resources :clients, only:[:show, :edit, :update, :favorite] do
@@ -33,5 +38,10 @@ Rails.application.routes.draw do
     get 'inquiry' => 'inquiries#index'
     post 'inquiry/confirm' => 'inquiries#confirm'
     post 'inquiry/thanks' => 'inquiries#thanks'
+  end
+
+  # ------管理者側-------
+  namespace :admin do
+    get 'top' => 'homes#top'
   end
 end

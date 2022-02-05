@@ -1,13 +1,15 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  # ---------ログイン後遷移先---------
+  # ---------ログイン、新規登録後遷移先---------
   def after_sign_in_path_for(resource)
     case resource
     when Client
       client_client_path(@client)
     when Actor
       actor_path(@actor)
+    when Admin
+      admin_top_path
     end
   end
 
