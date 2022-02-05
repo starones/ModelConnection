@@ -1,4 +1,5 @@
 # MODEL CONNECTION
+ <img src= "https://user-images.githubusercontent.com/91838052/152643179-fc46c86b-ad90-4ece-844f-04572e6335de.jpg" >
 
 ## サイト概要
 モデル事務所などに属さず、フリーで活動を行なっているモデルさんを紹介する、SNS系のサイトになります。<br/>
