@@ -22,6 +22,8 @@ Rails.application.routes.draw do
   namespace :client do
     resources :clients, only:[:show, :edit, :update, :favorite] do
       get :favorites, on: :collection
+      get 'unsubscribe' => 'actors#unsubscribe'
+      patch 'withdraw' => 'actors#withdraw'
     end
     resources :job_requests
   end
@@ -32,6 +34,8 @@ Rails.application.routes.draw do
     get 'about' => 'homes#about'
     resources :actors, only:[:index, :show, :edit, :update] do
     resource :favorites, only:[:create, :destroy]
+    get 'unsubscribe' => 'actors#unsubscribe'
+    patch 'withdraw' => 'actors#withdraw'
     end
     resources :job_requests, only:[:index]
     resources :clients, only:[:index]

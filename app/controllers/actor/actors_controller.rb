@@ -33,10 +33,23 @@ class Actor::ActorsController < ApplicationController
     end
   end
 
+  # ----------退会機能----------
+  def unsubscribe
+    @actor = current_actor
+  end
+
+  def withdraw
+    @actor = current_actor
+    @actor.update(is_deleted: true)
+    reset_session
+    redirect_to root_path
+  end
+  # ---------ここまで-----------
+
   private
 
   def actor_params
     params.require(:actor).permit(:name, :image, :born_year, :born_month, :born_day, :age, :body, :career,
-    :contact, :stature, :gender, :instagram_rink, :twitter_rink, :tiktok_rink, :others_rink)
+    :contact, :stature, :gender, :instagram_rink, :twitter_rink, :tiktok_rink, :others_rink, :is_deleted)
   end
 end

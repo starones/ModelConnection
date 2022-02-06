@@ -2,6 +2,8 @@
 
 <div class="container p-5 px-sm-0 bg-white border border-secondary shadow-lg">
     <div class="row ml-1">
+      <!-----退会してたら表示させないif文----->
+      <% if @actor.is_deleted == false %>
         <div class="col-lg-5 mr-3">
           <%= attachment_image_tag @actor, :image, size: "400x600", class:"r_actor_img card-img-top border", fallback: asset_path("no-image.jpeg")  %>
             <div class="row d-flex justify-content-around my-4">
@@ -75,11 +77,15 @@
                   </tr>
               </table>
         </div>
+      <% else %>
+        <h1>ユーザーがいません</h1>
+      <% end %>
     </div>
      <div class="row d-flex align-items-center justify-content-center mt-3">
         <% if actor_signed_in? %>
           <% if @actor.id == current_actor.id %>
             <%= link_to "編集", edit_actor_path(@actor), class: "btn btn-secondary btn-lg" %>
+            <%= link_to "退会", actor_unsubscribe_path(@actor), class: "btn btn-secondary btn-lg" %>
           <% end %>
         <% end %>
     </div>

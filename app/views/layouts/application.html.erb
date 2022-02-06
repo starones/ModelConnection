@@ -40,10 +40,10 @@
               <li class="nav-item mb-4"><h3><%= link_to "Contact Us", inquiry_path, class:"text-white" %></h3></li>
               <li class="nav-item mb-4"><h3><%= link_to "Log-out", destroy_client_session_path, method: :delete, class:"text-white" %></h3></li>
             <% elsif admin_signed_in?  %>
-              <li class="nav-item mb-4 mt-5 text-info"><h1>管理者</h1></li>
+              <li class="nav-item mb-4 mt-5 text-info"><h1>Admin</h1></li>
+              <li class="nav-item mb-4"><h3><%= link_to "Model", admin_actors_path, class:"text-white" %></h3></li>
+              <li class="nav-item mb-4"><h3><%= link_to "Client", admin_clients_path, class:"text-white" %></h3></li>
               <li class="nav-item mb-4"><h3><%= link_to "Log-out", destroy_admin_session_path, method: :delete, class:"text-white" %></h3></li>
-               <li class="nav-item mb-4"><h3><%= link_to "Model", class:"text-white" %></h3></li>
-                <li class="nav-item mb-4"><h3><%= link_to "Client", class:"text-white" %></h3></li>
             <% else %>
               <li class="nav-item mb-4 mt-5"><h3><%= link_to "Model list", actors_path, class:"text-white" %></h3></li>
               <li class="nav-item mb-4"><h3><%= link_to "About", about_path, class:"text-white" %></h3></li>

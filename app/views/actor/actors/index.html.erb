@@ -35,30 +35,34 @@
 
     <div class="r_actor_card1 row px-4 pt-3 pb-5">
       <% @actors.each do |actor| %>
-        <div class="r_actor_card2 col-lg-3 col-md-6">
-          <div class="card mx-auto mb-4 bg-dark text-white">
-            <%= link_to actor_path(actor) do %>
-              <%= attachment_image_tag actor, :image, size: "210x370", class:"card-img-top", fallback: asset_path("no-image.jpeg") %>
-              <!----------javascript(jquery)機能-------------->
-              <div class="caption1 text-center">
-                <h3 class="mb-5"><strong><%= actor.name %></strong></h3>
-                <h5>Bron：<%= actor.born_year %>/<%= actor.born_month %>/<%= actor.born_day %></h5>
-                <h5 class="my-3">Age：<%= actor.age %></h5>
-                <h5>Gender：
-                    <% if actor.gender == true %>
-                        <th>Woman</th>
-                    <% else %>
-                        <th>Men</th>
-                    <% end %>
-                </h5>
-              </div>
-              <!----------ここまで-------------------->
-            <% end %>
-              <p class="card-text text-center"><%= actor.name %></p>
+        <!-------退会してたら表示させないif文------>
+        <% if actor.is_deleted == false %>
+          <div class="r_actor_card2 col-lg-3 col-md-6">
+            <div class="card mx-auto mb-4 bg-dark text-white">
+              <%= link_to actor_path(actor) do %>
+                <%= attachment_image_tag actor, :image, size: "210x370", class:"card-img-top", fallback: asset_path("no-image.jpeg") %>
+                <!----------javascript(jquery)機能-------------->
+                <div class="caption1 text-center">
+                  <h3 class="mb-5"><strong><%= actor.name %></strong></h3>
+                  <h5>Bron：<%= actor.born_year %>/<%= actor.born_month %>/<%= actor.born_day %></h5>
+                  <h5 class="my-3">Age：<%= actor.age %></h5>
+                  <h5>Gender：
+                      <% if actor.gender == true %>
+                          <th>Woman</th>
+                      <% else %>
+                          <th>Men</th>
+                      <% end %>
+                  </h5>
+                </div>
+                <!----------ここまで-------------------->
+              <% end %>
+                <p class="card-text text-center"><%= actor.name %></p>
+            </div>
           </div>
-        </div>
+        <% end %>
       <% end %>
     </div>
+
 
 <!----kaminari----->
 <div class="d-flex align-items-center justify-content-center">
