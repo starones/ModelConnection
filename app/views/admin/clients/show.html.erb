@@ -1,1 +1,26 @@
-クライアント詳細画面
+<div class="container py-5">
+    <div class="row bg-white shadow-lg rounded border border-secondary mx-5">
+      <div class="col-11">
+        <h1 class="my-3 ml-2"><strong><%= @client.name %></strong></h1>
+         <table class='table ml-3'>
+            <tr>
+              <th>登録メールアドレス：</th>
+              <th><%= @client.email %></th>
+            </tr>
+            <tr>
+              <th class="pr-5">自己紹介：</th>
+              <th><%=simple_format(h(@client.body)) %></th>
+            </tr>
+            <tr>
+              <th>連絡先：</th>
+              <th><%= @client.contact %></th>
+            </tr>
+         </table>
+         <div class="row d-flex align-items-center justify-content-center my-3">
+            <% if admin_signed_in? %>
+                <%= link_to "編集", edit_admin_client_path(@client), class: "btn btn-secondary btn-lg" %>
+            <% end %>
+         </div>
+      </div>
+    </div>
+  </div>

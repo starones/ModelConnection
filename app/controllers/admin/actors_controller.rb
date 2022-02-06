@@ -1,5 +1,5 @@
 class Admin::ActorsController < ApplicationController
-    before_action :authenticate_admin!, except: [:index, :show, :edit]
+    before_action :authenticate_admin!
 
     def index
       @actors = Actor.all.page(params[:page]).per(20)
