@@ -1,20 +1,18 @@
 class Admin::ActorsController < ApplicationController
     before_action :authenticate_admin!
+    before_action :set_actor, only: [:show, :edit, :update]
 
     def index
       @actors = Actor.all.page(params[:page]).per(20)
     end
 
     def show
-      @actor = Actor.find(params[:id])
     end
 
     def edit
-      @actor = Actor.find(params[:id])
     end
 
     def update
-      @actor = Actor.find(params[:id])
       if @actor.update(actor_params)
         redirect_to admin_actor_path(@actor.id)
       else
@@ -23,6 +21,10 @@ class Admin::ActorsController < ApplicationController
     end
 
     private
+
+    def set_actor
+      @actor = Actor.find(params[:id])
+    end
 
     def actor_params
       params.require(:actor).permit(:name, :email, :image, :born_year, :born_month, :born_day, :age, :body, :career,

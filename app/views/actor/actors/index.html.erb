@@ -8,11 +8,11 @@
 
 
       <%= f.search_field :age_gteq, size: "6x6", placeholder:"年齢",  class:"mr-1 r_sarch_text1" %>歳〜
-      <%= f.search_field :age_lt, size: "6x6", placeholder:"年齢",  class:"mr-1 r_sarch_text1" %>歳
+      <%= f.search_field :age_lteq, size: "6x6", placeholder:"年齢",  class:"mr-1 r_sarch_text1" %>歳
 
 
       <%= f.search_field :stature_gteq, size: "7x7", placeholder:"身長",  class:"mr-1 ml-2" %>㎝〜
-      <%= f.search_field :stature_lt, size: "7x7", placeholder:"身長",  class:"mr-1 r_sarch_text2" %>cm
+      <%= f.search_field :stature_lteq, size: "7x7", placeholder:"身長",  class:"mr-1 r_sarch_text2" %>cm
 
     　<%= f.radio_button :gender_eq, '', {:checked => true} %>共通
       <%= f.radio_button :gender_eq, false %>男性

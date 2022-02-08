@@ -1,5 +1,6 @@
 class Actor::ActorsController < ApplicationController
   before_action :authenticate_actor!, except: [:index, :show]
+  before_action :set_actor, only: [:show, :edit, :update]
   # 更新しても閲覧数がカウントしないように設定したため下記２つ「, unique: [:ip_address]」を消すと閲覧数は上がる
   impressionist :actions => [:show], unique: [:ip_address]
 
@@ -9,13 +10,11 @@ class Actor::ActorsController < ApplicationController
   end
 
   def show
-    @actor = Actor.find(params[:id])
     # ----トラッキング機能（1つのIPアドレスで1PVあがる）----
     impressionist(@actor, nil, unique: [:ip_address])
   end
 
   def edit
-    @actor = Actor.find(params[:id])
     # ------ログインユーザーとidが一致してないとtopに戻すセキュリティー---
     if @actor.id == current_actor.id
       render "edit"
@@ -25,7 +24,6 @@ class Actor::ActorsController < ApplicationController
   end
 
   def update
-    @actor = Actor.find(params[:id])
     if @actor.update(actor_params)
       redirect_to actor_path(@actor.id)
     else
@@ -47,6 +45,10 @@ class Actor::ActorsController < ApplicationController
   # ---------ここまで-----------
 
   private
+
+  def set_actor
+    @actor = Actor.find(params[:id])
+  end
 
   def actor_params
     params.require(:actor).permit(:name, :image, :born_year, :born_month, :born_day, :age, :body, :career,
