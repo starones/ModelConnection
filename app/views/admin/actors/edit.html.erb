@@ -68,6 +68,13 @@
                                     <label>その他リンク先:</label><br/>
                                     <%= f.text_field :others_rink, class: "form-control", placeholder:"URLをお貼りください。" %>
                                 </div>
+                                <div class="form-group">
+                                    <label>ステータス：</label><br/>
+                                    <%= f.radio_button :is_deleted, false %>
+                                    <%= f.label :is_deleted, "有効" %>
+                                    <%= f.radio_button :is_deleted, true %>
+                                    <%= f.label :is_deleted, "退会" %>
+                                </div>
                                 <div class="text-center pb-3">
                                     <%= f.submit "保存", class: "btn btn-secondary btn-lg" %>
                                 </div>

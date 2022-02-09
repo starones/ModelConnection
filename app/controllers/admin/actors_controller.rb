@@ -28,7 +28,7 @@ class Admin::ActorsController < ApplicationController
 
     def actor_params
       params.require(:actor).permit(:name, :email, :image, :born_year, :born_month, :born_day, :age, :body, :career,
-      :contact, :stature, :gender, :instagram_rink, :twitter_rink, :tiktok_rink, :others_rink)
+      :contact, :stature, :gender, :instagram_rink, :twitter_rink, :tiktok_rink, :others_rink, :is_deleted)
     end
 
 end

@@ -43,6 +43,14 @@
               <th>連絡先：</th>
               <th><%= @actor.contact %></th>
             </tr>
+            <tr>
+              <th>会員ステータス：</th>
+              <% if @actor.is_deleted == true %>
+                <th class="text-danger">退会</th>
+              <% else %>
+                <th class="text-success">有効</th>
+              <% end %>
+            </tr>
          </table>
          <div class="row d-flex align-items-center justify-content-center my-3">
             <% if admin_signed_in? %>
