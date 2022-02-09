@@ -22,8 +22,8 @@ Rails.application.routes.draw do
   namespace :client do
     resources :clients, only:[:show, :edit, :update, :favorite] do
       get :favorites, on: :collection
-      get 'unsubscribe' => 'actors#unsubscribe'
-      patch 'withdraw' => 'actors#withdraw'
+      get 'unsubscribe' => 'clients#unsubscribe'
+      patch 'withdraw' => 'clients#withdraw'
     end
     resources :job_requests
   end

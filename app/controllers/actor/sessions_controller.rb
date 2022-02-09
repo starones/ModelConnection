@@ -25,10 +25,10 @@ class Actor::SessionsController < Devise::SessionsController
   # def configure_sign_in_params
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
   # end
-  
+
   # ---------退会機能---------
   protected
-  
+
   def actor_state
     @actor = Actor.find_by(email: params[:actor][:email])
     return if !@actor
@@ -36,5 +36,5 @@ class Actor::SessionsController < Devise::SessionsController
       redirect_to new_actor_registration_path
     end
   end
-  
+
 end

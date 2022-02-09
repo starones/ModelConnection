@@ -2,14 +2,16 @@
   <div class="container py-2">
     <div class="row">
       <% @clients.each do |client| %>
-        <div class="col-lg-3 col-md-6">
-          <div class="card mx-auto mb-4 bg-dark text-white">
-            <%= link_to client_client_path(client) do %>
-              <%= attachment_image_tag client, :image, size: "210x210", class:"card-img-top", fallback: asset_path("no-image.jpeg") %>
-            <% end %>
-              <p class="card-text text-center"><%= client.name %></p>
+        <% if client.is_deleted == false %>
+          <div class="col-lg-3 col-md-6">
+            <div class="card mx-auto mb-4 bg-dark text-white">
+              <%= link_to client_client_path(client) do %>
+                <%= attachment_image_tag client, :image, size: "210x210", class:"card-img-top", fallback: asset_path("no-image.jpeg") %>
+              <% end %>
+                <p class="card-text text-center"><%= client.name %></p>
+            </div>
           </div>
-        </div>
+        <% end %>
       <% end %>
     </div>
   </div>

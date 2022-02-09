@@ -28,6 +28,19 @@ class Client::ClientsController < ApplicationController
     favorites = Favorite.where(client_id: current_client.id).pluck(:actor_id)
     @favorite_list = Actor.find(favorites)
   end
+  
+  #------- 退会機能------
+  def unsubscribe
+    @cient = current_client
+  end
+
+  def withdraw
+    @client = current_client
+    @client.update(is_deleted: true)
+    reset_session
+    redirect_to root_path
+  end
+  # ------ここまで-------
 
   private
 
@@ -36,6 +49,6 @@ class Client::ClientsController < ApplicationController
   end
 
   def client_params
-    params.require(:client).permit(:name, :image, :body, :contact)
+    params.require(:client).permit(:name, :image, :body, :contact, :is_deleted)
   end
 end
