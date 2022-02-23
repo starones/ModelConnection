@@ -2,34 +2,34 @@
 
   <div class="container pb-5">
     <div class="row text-center mt-5 bg-white">
-        <table class="table">
-          <thead>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>名前</th>
+            <th class="ml-2">登録日</th>
+            <th>会員ステータス</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @actors.each do |actor| %>
             <tr>
-              <th>ID</th>
-              <th>名前</th>
-              <th class="ml-2">登録日</th>
-              <th>会員ステータス</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <% @actors.each do |actor| %>
-              <tr>
                 <td><%= actor.id %></td>
                 <td><%= actor.name %></td>
                 <td><%= actor.created_at.strftime("%Y/%m/%d") %></td>
-                <% if actor.is_deleted == true %>
-                  <td class="text-danger">退会</td>
-                <% else %>
-                  <td class="text-success">有効</td>
-                <% end %>
+              <% if actor.is_deleted == true %>
+                <td class="text-danger">退会</td>
+              <% else %>
+                <td class="text-success">有効</td>
+              <% end %>
                 <td class="text-right"><%= link_to "詳細", admin_actor_path(actor), class: "btn btn-secondary" %></td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
-      </div>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
     </div>
+  </div>
 
  <!----kaminari----->
 <div class="d-flex align-items-center justify-content-center">
