@@ -33,7 +33,7 @@ class Actor::SessionsController < Devise::SessionsController
     @actor = Actor.find_by(email: params[:actor][:email])
     return if !@actor
     if @actor.valid_password?(params[:actor][:password]) && @actor.is_deleted
-      redirect_to new_actor_registration_path
+      redirect_to new_actor_registration_path, notice: 'このユーザーは退会されているためご利用できません。新規登録を行ってください'
     end
   end
 
