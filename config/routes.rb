@@ -32,6 +32,7 @@ Rails.application.routes.draw do
   scope module: :actor do
     root to: 'homes#top'
     get 'about' => 'homes#about'
+    get 'login' => 'homes#login'
     resources :actors, only:[:index, :show, :edit, :update] do
     resource :favorites, only:[:create, :destroy]
     get 'unsubscribe' => 'actors#unsubscribe'

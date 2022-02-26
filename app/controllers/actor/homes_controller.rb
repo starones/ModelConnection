@@ -8,4 +8,7 @@ class Actor::HomesController < ApplicationController
 
   def about
   end
+  
+  def login
+  end
 end
