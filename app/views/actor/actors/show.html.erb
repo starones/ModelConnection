@@ -1,96 +1,101 @@
 <div class="text-center alert-info"><%= notice %></div>
 
 <div class="container p-5 px-sm-0 bg-white border border-secondary shadow-lg">
-  <div class="row ml-1">
-    <!-----退会してたら表示させないif文----->
-    <% if @actor.is_deleted == false %>
-      <div class="col-lg-5 mr-3">
-        <%= attachment_image_tag @actor, :image, size: "400x600", class:"r_actor_img card-img-top border", fallback: asset_path("no-image.jpeg")  %>
-          <div class="row d-flex justify-content-around my-4">
-            <!------------インスタアカウントに遷移-------------->
-            <% if @actor.instagram_rink? %>
-              <a href="https://www.instagram.com/<%= @actor.instagram_rink %>"><i class="fab fa-instagram fa-4x instagram_icon"></i></a>
-            <% else %>
-              <i class="fab fa-instagram fa-4x icons"></i>
-            <% end %>
-            <!-------------Twitterアカウントに遷移-------------->
-            <% if @actor.twitter_rink? %>
-              <a href="https://twitter.com/<%= @actor.twitter_rink %>"><i class="fab fa-twitter fa-4x twitter_icon"></i></a>
-            <% else %>
-            <i class="fab fa-twitter fa-4x icons"></i>
-            <% end %>
-            <!------------TikTokアカウントに遷移---------------->
-            <% if @actor.tiktok_rink? %>
-              <a href="https://www.tiktok.com/<%= @actor.tiktok_rink %>"><i class="fab fa-tiktok fa-4x rounded tiktok_icon"></i></a>
-            <% else %>
-              <i class="fab fa-tiktok icons rounded fa-4x"></i>
-            <% end %>
-            <!---------その他自分で設定したurlに遷移------------>
-            <% if @actor.others_rink? %>
-              <a href="<%= @actor.others_rink %>"><i class="fas fa-globe fa-4x globe_icon"></i></a>
-            <% else %>
-              <i class="fas fa-globe fa-4x icons"></i>
-            <% end %>
-          </div>
-      </div>
-
-      <div class="col-lg-6">
-        <h1 class="row justify-content-between"><%= @actor.name %>
-          <!----------お気に入り機能（部分テンプレート）---------->
-          <div id="favorite-btn_<%= @actor.id %>">
-            <%= render 'actor/favorites/favorites', actor: @actor %>
-          </div>
-          <!---------------ここまで---------------->
-        </h1>
-          <table class="table text-left">
-            <tr>
-              <th class="pr-5">生年月日：</th>
-      	      <th><%= @actor.born_year %> 年 <%= @actor.born_month%> 月 <%= @actor.born_day %> 日</th>
-            </tr>
-            <tr>
-              <th>年齢：</th>
-              <th><%= @actor.age %> 歳</th>
-            </tr>
-            <tr>
-              <th>性別：</th>
-              <% if @actor.gender == true %>
-                  <th>女性</th>
-              <% else %>
-                  <th>男性</th>
-              <% end %>
-            </tr>
-            <tr>
-              <th>身長：</th>
-              <th><%= @actor.stature %> cm</th>
-            </tr>
-            <tr>
-              <th>出身地：</th>
-              <th><%= @actor.string %></th>
-            </tr>
-            <tr>
-              <th>自己PR：</th>
-              <th><%= simple_format(h(@actor.body)) %></th>
-            </tr>
-            <tr>
-              <th>出演経歴：</th>
-              <th><%= simple_format(h(@actor.career)) %></th>
-            </tr>
-            <tr>
-              <th>連絡先：</th>
-              <th><%= @actor.contact %></th>
-            </tr>
-          </table>
-      </div>
-    <% else %>
-      <h1>ユーザーがいません</h1>
+  <% if actor_signed_in? %>
+    <% if @actor.id == current_actor.id %>
+      <div class="text-right mr-4">閲覧数：<%= @actor.impressions_count %></div>
     <% end %>
-  </div>
-    <div class="row d-flex align-items-center justify-content-center mt-3">
-      <% if actor_signed_in? %>
-        <% if @actor.id == current_actor.id %>
-          <%= link_to "マイページ編集", edit_actor_path(@actor), class: "btn btn-secondary btn-lg mr-3" %>
-          <%= link_to "退会", actor_unsubscribe_path(@actor), class: "btn btn-danger btn-lg" %>
-        <% end %>
+  <% end %>
+    <div class="row ml-1">
+      <!-----退会してたら表示させないif文----->
+      <% if @actor.is_deleted == false %>
+        <div class="col-lg-5 mr-3">
+          <%= attachment_image_tag @actor, :image, size: "400x600", class:"r_actor_img card-img-top border", fallback: asset_path("no-image.jpeg")  %>
+            <div class="row d-flex justify-content-around my-4">
+              <!------------インスタアカウントに遷移-------------->
+              <% if @actor.instagram_rink? %>
+                <a href="https://www.instagram.com/<%= @actor.instagram_rink %>"><i class="fab fa-instagram fa-4x instagram_icon"></i></a>
+              <% else %>
+                <i class="fab fa-instagram fa-4x icons"></i>
+              <% end %>
+              <!-------------Twitterアカウントに遷移-------------->
+              <% if @actor.twitter_rink? %>
+                <a href="https://twitter.com/<%= @actor.twitter_rink %>"><i class="fab fa-twitter fa-4x twitter_icon"></i></a>
+              <% else %>
+              <i class="fab fa-twitter fa-4x icons"></i>
+              <% end %>
+              <!------------TikTokアカウントに遷移---------------->
+              <% if @actor.tiktok_rink? %>
+                <a href="https://www.tiktok.com/<%= @actor.tiktok_rink %>"><i class="fab fa-tiktok fa-4x rounded tiktok_icon"></i></a>
+              <% else %>
+                <i class="fab fa-tiktok icons rounded fa-4x"></i>
+              <% end %>
+              <!---------その他自分で設定したurlに遷移------------>
+              <% if @actor.others_rink? %>
+                <a href="<%= @actor.others_rink %>"><i class="fas fa-globe fa-4x globe_icon"></i></a>
+              <% else %>
+                <i class="fas fa-globe fa-4x icons"></i>
+              <% end %>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+          <h1 class="row justify-content-between"><%= @actor.name %>
+            <!----------お気に入り機能（部分テンプレート）---------->
+            <div id="favorite-btn_<%= @actor.id %>">
+              <%= render 'actor/favorites/favorites', actor: @actor %>
+            </div>
+            <!---------------ここまで---------------->
+          </h1>
+            <table class="table text-left">
+              <tr>
+                <th class="pr-5">生年月日：</th>
+        	      <th><%= @actor.born_year %> 年 <%= @actor.born_month%> 月 <%= @actor.born_day %> 日</th>
+              </tr>
+              <tr>
+                <th>年齢：</th>
+                <th><%= @actor.age %> 歳</th>
+              </tr>
+              <tr>
+                <th>性別：</th>
+                <% if @actor.gender == true %>
+                    <th>女性</th>
+                <% else %>
+                    <th>男性</th>
+                <% end %>
+              </tr>
+              <tr>
+                <th>身長：</th>
+                <th><%= @actor.stature %> cm</th>
+              </tr>
+              <tr>
+                <th>出身地：</th>
+                <th><%= @actor.string %></th>
+              </tr>
+              <tr>
+                <th>自己PR：</th>
+                <th><%= simple_format(h(@actor.body)) %></th>
+              </tr>
+              <tr>
+                <th>出演経歴：</th>
+                <th><%= simple_format(h(@actor.career)) %></th>
+              </tr>
+              <tr>
+                <th>連絡先：</th>
+                <th><%= @actor.contact %></th>
+              </tr>
+            </table>
+        </div>
+      <% else %>
+        <h1>ユーザーがいません</h1>
       <% end %>
     </div>
+      <div class="row d-flex align-items-center justify-content-center mt-3">
+        <% if actor_signed_in? %>
+          <% if @actor.id == current_actor.id %>
+            <%= link_to "マイページ編集", edit_actor_path(@actor), class: "btn btn-secondary btn-lg mr-3" %>
+            <%= link_to "退会", actor_unsubscribe_path(@actor), class: "btn btn-danger btn-lg" %>
+          <% end %>
+        <% end %>
+      </div>
 </div>
