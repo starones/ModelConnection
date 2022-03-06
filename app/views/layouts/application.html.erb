@@ -26,7 +26,7 @@
               <li class="nav-item mb-4"><h3><%= link_to "Model list", actors_path, class:"text-white" %></h3></li>
               <li class="nav-item mb-4"><h3><%= link_to "My page", actor_path(current_actor.id), class:"text-white" %></h3></li>
               <li class="nav-item mb-4"><h3><%= link_to "Job list", job_requests_path, class:"text-white" %></h3></li>
-              <li class="nav-item mb-4"><h3><%= link_to "Clitent list", clients_path, class:"text-white" %></h3></li>
+              <li class="nav-item mb-4"><h3><%= link_to "Client list", clients_path, class:"text-white" %></h3></li>
               <li class="nav-item mb-4"><h3><%= link_to "Contact Us", inquiry_path, class:"text-white" %></h3></li>
               <li class="nav-item mb-4"><h3><%= link_to "Log-out", destroy_actor_session_path, method: :delete , class:"text-white"%></h3></li>
             <% elsif client_signed_in?  %>
@@ -80,9 +80,9 @@
   					</ul>
   				</div>
   				<div class="r_footer_text col-xs-12 col-sm-4 col-md-4">
-  					<h5 class="text-white">Clitent</h5>
+  					<h5 class="text-white">Client</h5>
   					<ul class="list-unstyled quick-links ml-3">
-  						<li class="nav-item my-2"><%= link_to ">>Clitent list", clients_path, class:"text-white" %></li>
+  						<li class="nav-item my-2"><%= link_to ">>Client list", clients_path, class:"text-white" %></li>
   					</ul>
   				</div>
   			</div>
@@ -106,9 +106,9 @@
   					</ul>
   				</div>
   				<div class="col-xs-12 col-sm-4 col-md-4">
-  					<h5 class="text-white">Clitent</h5>
+  					<h5 class="text-white">Client</h5>
   					<ul class="list-unstyled quick-links ml-3">
-  						<li class="nav-item my-2"><%= link_to ">>Clitent list", clients_path, class:"text-white" %></li>
+  						<li class="nav-item my-2"><%= link_to ">>Client list", clients_path, class:"text-white" %></li>
   						<li class="nav-item mb-2"><%= link_to ">>Log-in", new_client_session_path, class:"text-white" %></li>
   						<li class="nav-item mb-2"><%= link_to ">>Sign-up", new_client_registration_path, class:"text-white" %></li>
   					</ul>
