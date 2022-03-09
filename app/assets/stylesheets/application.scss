@@ -318,3 +318,13 @@ border-color: #222222;
     margin-bottom: -50px;
   }
 }
+
+// kaminariの色変更
+.pagination>li>a {
+  border: none;
+  color: #696969; 
+}
+
+.pagination>.active>a {
+  background: #DDDDDD;
+}
